@@ -170,6 +170,11 @@ class CheckGripperContact(UnaryAtomic):
         return arg1.check_gripper_contact()
 
 
+class CheckContact(UnaryAtomic):
+    def __call__(self, arg1, arg2):
+        return arg1.check_contact(arg2)
+
+
 class CheckGripperContactPart(UnaryAtomic):
     def __call__(self, arg1, arg2):
         return arg1.check_gripper_contact_part(arg2)

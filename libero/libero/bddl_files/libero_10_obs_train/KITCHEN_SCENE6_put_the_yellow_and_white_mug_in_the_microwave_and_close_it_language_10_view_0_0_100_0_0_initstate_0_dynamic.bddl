@@ -1,0 +1,101 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language insert the yellow and white cup into the microwave and seal it)
+    (:regions
+      (microwave_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 0.33999999999999997 0.01 0.36)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.025 0.025 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.125 -0.275 -0.07500000000000001 -0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_front_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.05 -0.3 0.05 -0.2)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target microwave_1)
+      )
+      (heating_region
+          (:target microwave_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    microwave_1 - microwave
+  )
+
+  (:objects
+    porcelain_mug_1 - porcelain_mug
+    white_yellow_mug_1 - white_yellow_mug
+    bottle_of_coconut_water_1_with_hand_1 - bottle_of_coconut_water_1_with_hand
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_1
+    microwave_1
+  )
+
+  (:init
+    (On porcelain_mug_1 kitchen_table_porcelain_mug_init_region)
+    (On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)
+    (On microwave_1 kitchen_table_microwave_init_region)
+    (Open microwave_1)
+  )
+
+  (:goal
+    (And (In white_yellow_mug_1 microwave_1_heating_region) (Close microwave_1))
+  )
+
+(:obstacle
+  bottle_of_coconut_water_1_with_hand
+)
+
+
+
+(:dynamics
+(bottle_of_coconut_water_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.27802698683050364 0.29802698683050366 0.23901300444639845 0.25901300444639846 0.38 0.4)
+            (:v -0.06681546053500247 -0.06681546053500247 -0.12271852686460857 -0.12271852686460857 0.008065494729838836 0.008065494729838836)
+            (:quat 0.12546771404825602 -0.32202439354157497 -0.1498074373284986 0.9263454401122477)
+        )
+    )
+)
+)

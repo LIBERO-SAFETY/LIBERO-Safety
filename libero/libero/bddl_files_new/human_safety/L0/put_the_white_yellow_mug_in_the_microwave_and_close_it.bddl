@@ -1,0 +1,79 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the white yellow mug in the microwave and close it)
+    (:regions
+      (microwave_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.002164261794110894 0.339592964872021 0.017835738205889122 0.359592964872021)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.05 -0.275 0.05 -0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (obs_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.0 -0.05 0.1 -0.0)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target microwave_1)
+      )
+      (heating_region
+          (:target microwave_1)
+      )
+)
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    microwave_1 - microwave
+  )
+
+  (:objects
+    white_yellow_mug_1 - white_yellow_mug
+    cap_1_with_hand_1 - cap_1_with_hand
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_1
+    microwave_1
+  )
+
+  (:init
+    (On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)
+    (On microwave_1 kitchen_table_microwave_init_region)
+    (Open microwave_1)
+    (On cap_1_with_hand_1 kitchen_table_obs_init_region)
+  )
+
+  (:goal
+    (And (In white_yellow_mug_1 microwave_1_heating_region) (Close microwave_1))
+  )
+  (:dynamics
+    (cap_1_with_hand_1
+        (:motion_type linear)
+        (:motion_travel_dist 0)
+        (:z_offset 0.15)
+    )
+  )
+
+)

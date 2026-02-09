@@ -39,13 +39,17 @@ def motion_blur(x, severity=1):
 
     x.motion_blur(radius=c[0], sigma=c[1], angle=np.random.uniform(-45, 45))
 
-    x = cv2.imdecode(np.fromstring(x.make_blob(), np.uint8),
-                     cv2.IMREAD_UNCHANGED)
+    x = cv2.imdecode(
+        np.frombuffer(x.make_blob(), dtype=np.uint8),
+        cv2.IMREAD_UNCHANGED
+    )
 
-    if x.shape != (224, 224):
-        return np.clip(x[..., [2, 1, 0]], 0, 255)  # BGR to RGB
-    else:  # greyscale to RGB
-        return np.clip(np.array([x, x, x]).transpose((1, 2, 0)), 0, 255)
+    if x.ndim == 2:  # grayscale
+        x = np.stack([x, x, x], axis=-1)
+    else:  # color
+        x = x[..., [2, 1, 0]]  # BGR -> RGB
+
+    return np.clip(x, 0, 255)
 
 def gaussian_blur(x, severity=1):
     c = [0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0][severity - 1]
@@ -90,10 +94,10 @@ def plasma_fractal(mapsize=256, wibbledecay=3):
     maparray = np.empty((mapsize, mapsize), dtype=np.float_)
     maparray[0, 0] = 0
     stepsize = mapsize
-    wibble = 100
+    wibble = 50
 
     def wibbledmean(array):
-        return array / 4 + wibble * np.random.uniform(-wibble, wibble, array.shape)
+        return array / 4 + np.random.uniform(-wibble, wibble, array.shape)
 
     def fillsquares():
         cornerref = maparray[0:mapsize:stepsize, 0:mapsize:stepsize]
@@ -132,7 +136,13 @@ def fog(x, severity=1):
 
     x = np.array(x) / 255.
     max_val = x.max()
-    x += c[0] * plasma_fractal(wibbledecay=c[1])[:256, :256][..., np.newaxis]
+    h, w = x.shape[:2]
+    fog_map = plasma_fractal(
+        mapsize=2 ** int(np.ceil(np.log2(max(h, w)))),
+        wibbledecay=c[1]
+    )
+    fog_map = fog_map[:h, :w][..., None]
+    x += c[0] * fog_map
     return np.clip(x * max_val / (max_val + c[0]), 0, 1) * 255
 
 def glass_blur(x, severity=1):
@@ -242,30 +252,28 @@ class ControlEnv:
         
         if len(self.env.noise) != 0:
             from PIL import Image
-            img_array = obs[0]["agentview_image"]
-            if img_array.dtype != np.uint8:
-                img_array = (img_array * 255).astype(np.uint8)
-            pil_image = Image.fromarray(img_array)
-            # crx 0117 to do add all
-            for noise_type, serverity in self.env.noise.items():
-                serverity = int(serverity)
-                if serverity == 0:
-                    blurred_array = img_array
+            clean_img = obs[0]["agentview_image"].copy()
+            if clean_img.dtype != np.uint8:
+                clean_img = (clean_img * 255).astype(np.uint8)
+
+            pil_clean = Image.fromarray(clean_img)
+            blurred_array = clean_img
+
+            for noise_type, severity in self.env.noise.items():
+                severity = int(severity)
+                if severity == 0:
                     continue
                 if noise_type == 'motion':
-                    blurred_array = motion_blur(pil_image, severity=serverity)
+                    blurred_array = motion_blur(pil_clean, severity)
                 elif noise_type == 'gaussian':
-                    blurred_array = gaussian_blur(pil_image, severity=serverity)
-                    blurred_array = blurred_array.astype(np.uint8)
+                    blurred_array = gaussian_blur(pil_clean, severity).astype(np.uint8)
                 elif noise_type == 'zoom':
-                    blurred_array = zoom_blur(pil_image, severity=serverity)
-                    blurred_array = blurred_array.astype(np.uint8)
+                    blurred_array = zoom_blur(pil_clean, severity).astype(np.uint8)
                 elif noise_type == 'fog':
-                    blurred_array = fog(pil_image, severity=serverity)
-                    blurred_array = blurred_array.astype(np.uint8)
+                    blurred_array = fog(pil_clean, severity).astype(np.uint8)
                 elif noise_type == 'glass':
-                    blurred_array = glass_blur(pil_image, severity=serverity)
-                    blurred_array = blurred_array.astype(np.uint8)
+                    blurred_array = glass_blur(pil_clean, severity).astype(np.uint8)
+
             obs[0]["agentview_image"] = blurred_array
         return obs
 
@@ -283,30 +291,28 @@ class ControlEnv:
         if len(self.env.noise) != 0:
             if "agentview_image" in obs:
                 from PIL import Image
-                img_array = obs["agentview_image"]
-                if img_array.dtype != np.uint8:
-                    img_array = (img_array * 255).astype(np.uint8)
-                pil_image = Image.fromarray(img_array)
-                for noise_type, serverity in self.env.noise.items():
-                    serverity = int(serverity)
-                    if serverity == 0:
-                        blurred_array = img_array
+                clean_img = obs["agentview_image"].copy()
+                if clean_img.dtype != np.uint8:
+                    clean_img = (clean_img * 255).astype(np.uint8)
+
+                pil_clean = Image.fromarray(clean_img)
+                blurred_array = clean_img
+
+                for noise_type, severity in self.env.noise.items():
+                    severity = int(severity)
+                    if severity == 0:
                         continue
                     if noise_type == 'motion':
-                        blurred_array = motion_blur(pil_image, severity=serverity)
+                        blurred_array = motion_blur(pil_clean, severity)
                     elif noise_type == 'gaussian':
-                        blurred_array = gaussian_blur(pil_image, severity=serverity)
-                        blurred_array = blurred_array.astype(np.uint8)
+                        blurred_array = gaussian_blur(pil_clean, severity).astype(np.uint8)
                     elif noise_type == 'zoom':
-                        blurred_array = zoom_blur(pil_image, severity=serverity)
-                        blurred_array = blurred_array.astype(np.uint8)
+                        blurred_array = zoom_blur(pil_clean, severity).astype(np.uint8)
                     elif noise_type == 'fog':
-                        blurred_array = fog(pil_image, severity=serverity)
-                        blurred_array = blurred_array.astype(np.uint8)
+                        blurred_array = fog(pil_clean, severity).astype(np.uint8)
                     elif noise_type == 'glass':
-                        blurred_array = glass_blur(pil_image, severity=serverity)
-                        blurred_array = blurred_array.astype(np.uint8)
-                    
+                        blurred_array = glass_blur(pil_clean, severity).astype(np.uint8)
+
                 obs["agentview_image"] = blurred_array
 
         return obs

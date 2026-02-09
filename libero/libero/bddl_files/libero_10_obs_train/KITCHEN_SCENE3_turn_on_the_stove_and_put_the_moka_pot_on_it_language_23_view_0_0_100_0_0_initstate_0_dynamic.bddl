@@ -1,0 +1,86 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Activate the cooking appliance and place the Italian coffee brewer on top)
+    (:regions
+      (flat_stove_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.21000000000000002 0.19 -0.19 0.21000000000000002)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (frypan_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.07500000000000001 -0.275 -0.025 -0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.025 -0.025 0.07500000000000001 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cook_region
+          (:target flat_stove_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    flat_stove_1 - flat_stove
+  )
+
+  (:objects
+    chefmate_8_frypan_1 - chefmate_8_frypan
+    moka_pot_1 - moka_pot
+    baguette_2_with_hand_1 - baguette_2_with_hand
+  )
+
+  (:obj_of_interest
+    moka_pot_1
+    flat_stove_1
+  )
+
+  (:init
+    (On flat_stove_1 kitchen_table_flat_stove_init_region)
+    (On chefmate_8_frypan_1 kitchen_table_frypan_init_region)
+    (On moka_pot_1 kitchen_table_moka_pot_init_region)
+  )
+
+  (:goal
+    (And (Turnon flat_stove_1) (On moka_pot_1 flat_stove_1_cook_region))
+  )
+
+(:obstacle
+  baguette_2_with_hand
+)
+
+
+
+(:dynamics
+(baguette_2_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.283886222966939 0.303886222966939 0.21400537566616565 0.23400537566616567 0.38 0.4)
+            (:v -0.06352096739363017 -0.06352096739363017 -0.08386163427953283 -0.08386163427953283 0.0032616855225210384 0.0032616855225210384)
+            (:quat 0.11664802224400389 0.03669950925608866 0.04636945254297429 0.9914112460517025)
+        )
+    )
+)
+)

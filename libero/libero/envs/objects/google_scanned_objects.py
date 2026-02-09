@@ -66,9 +66,16 @@ class Notebook(GoogleScannedObject):
 
 
 @register_object
-class vase(GoogleScannedObject):
+class Vase(GoogleScannedObject):
     def __init__(self, name='vase', obj_name='vase'):
         super().__init__(name, obj_name)
+
+
+@register_object
+class SaladPorcelainPlate(GoogleScannedObject):
+    def __init__(self, name='salad_porcelain_plate', obj_name='porcelain_salad_plate'):
+        super().__init__(name, obj_name)
+
 
 
 @register_object
@@ -76,6 +83,19 @@ class ToyCar(GoogleScannedObject):
     def __init__(self, name='toy_car', obj_name='toy_car'):
         super().__init__(name, obj_name)
         self.rotation_axis = 'z'
+
+
+@register_object
+class RotatedToyCar(GoogleScannedObject):
+    def __init__(self, name='rotated_toy_car', obj_name='toy_car'):
+        super().__init__(name, obj_name)
+        self.rotation_axis = None
+        self.rotation = {
+            'x': (np.pi/2, np.pi/2),
+            'y': (0, 0),
+            'z': (np.pi/2, np.pi/2),
+        }
+
 
 @register_object
 class ToyTurtle(GoogleScannedObject):
@@ -146,7 +166,7 @@ class ToyTrain(GoogleScannedObject):
         super().__init__(name, obj_name)
         self.rotation_axis = 'z'
         self.rotation = {
-            'x': (np.pi / 4, np.pi / 4),
+            'x': (0, 0),
             'y': (0, 0),
             'z': (np.pi / 2, np.pi / 2),
         }

@@ -1,0 +1,101 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the yellow and white mug in the microwave and close it)
+    (:regions
+      (microwave_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.019140688262516286 0.3434657587951034 0.03914068826251631 0.3634657587951034)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.0011169795140430414 -0.014786207902528421 0.051116979514043044 0.03521379209747158)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.13253957892527113 -0.25541282821943323 -0.08253957892527113 -0.20541282821943319)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_front_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.02921950341991092 -0.3132574629878528 0.07078049658008909 -0.2132574629878528)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target microwave_1)
+      )
+      (heating_region
+          (:target microwave_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    microwave_1 - microwave
+  )
+
+  (:objects
+    porcelain_mug_1 - porcelain_mug
+    white_yellow_mug_1 - white_yellow_mug
+    beeswax_candle_7_with_hand_1 - beeswax_candle_7_with_hand
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_1
+    microwave_1
+  )
+
+  (:init
+    (On porcelain_mug_1 kitchen_table_porcelain_mug_init_region)
+    (On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)
+    (On microwave_1 kitchen_table_microwave_init_region)
+    (Open microwave_1)
+  )
+
+  (:goal
+    (And (In white_yellow_mug_1 microwave_1_heating_region) (Close microwave_1))
+  )
+
+(:obstacle
+  beeswax_candle_7_with_hand
+)
+
+
+
+(:dynamics
+(beeswax_candle_7_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.26547385364378706 0.2854738536437871 0.2082074674275721 0.2282074674275721 0.38 0.4)
+            (:v -0.05731379866255805 -0.05731379866255805 -0.1036547102479278 -0.1036547102479278 0.008039967832518122 0.008039967832518122)
+            (:quat 0.7731290438613774 0.4039208501766842 0.31906684514626626 0.37056143439238987)
+        )
+    )
+)
+)

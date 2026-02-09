@@ -1,0 +1,110 @@
+(define (problem LIBERO_Floor_Manipulation)
+  (:domain robosuite)
+  (:language Can you make sure the orange juice ends up in the basket)
+    (:regions
+      (bin_region
+          (:target floor)
+          (:ranges (
+              (-0.01 0.25 0.01 0.27)
+            )
+          )
+      )
+      (target_object_region
+          (:target floor)
+          (:ranges (
+              (0.025 -0.125 0.07500000000000001 -0.07500000000000001)
+            )
+          )
+      )
+      (other_object_region_0
+          (:target floor)
+          (:ranges (
+              (-0.145 -0.265 -0.095 -0.215)
+            )
+          )
+      )
+      (other_object_region_1
+          (:target floor)
+          (:ranges (
+              (-0.175 0.034999999999999996 -0.125 0.08499999999999999)
+            )
+          )
+      )
+      (other_object_region_2
+          (:target floor)
+          (:ranges (
+              (0.07500000000000001 -0.225 0.125 -0.17500000000000002)
+            )
+          )
+      )
+      (other_object_region_3
+          (:target floor)
+          (:ranges (
+              (0.125 0.0049999999999999975 0.175 0.055)
+            )
+          )
+      )
+      (other_object_region_4
+          (:target floor)
+          (:ranges (
+              (-0.225 -0.10500000000000001 -0.17500000000000002 -0.055)
+            )
+          )
+      )
+      (contain_region
+          (:target basket_1)
+      )
+    )
+
+  (:fixtures
+    floor - floor
+  )
+
+  (:objects
+    orange_juice_1 - orange_juice
+    basket_1 - basket
+    butter_1 - butter
+    chocolate_pudding_1 - chocolate_pudding
+    bbq_sauce_1 - bbq_sauce
+    ketchup_1 - ketchup
+    salad_dressing_1 - salad_dressing
+    half_baguette_1_with_hand_1 - half_baguette_1_with_hand
+  )
+
+  (:obj_of_interest
+    orange_juice_1
+    basket_1
+  )
+
+  (:init
+    (On orange_juice_1 floor_target_object_region)
+    (On butter_1 floor_other_object_region_0)
+    (On chocolate_pudding_1 floor_other_object_region_1)
+    (On bbq_sauce_1 floor_other_object_region_2)
+    (On ketchup_1 floor_other_object_region_3)
+    (On salad_dressing_1 floor_other_object_region_4)
+    (On basket_1 floor_bin_region)
+  )
+
+  (:goal
+    (And (In orange_juice_1 basket_1_contain_region))
+  )
+
+(:obstacle
+  half_baguette_1_with_hand
+)
+
+
+
+(:dynamics
+(half_baguette_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.09267207132943708 0.11267207132943707 -0.09380916543008695 -0.07380916543008696 0.32 0.35)
+            (:v -0.03607181328362542 -0.03607181328362542 0.12079058949536807 0.12079058949536807 0.009881483785786033 0.009881483785786033)
+            (:quat -0.021234508777149226 -0.003404732466295911 -0.012012329136322985 0.9996965576526443)
+        )
+    )
+)
+)

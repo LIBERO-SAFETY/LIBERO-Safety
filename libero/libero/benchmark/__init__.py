@@ -83,18 +83,6 @@ libero_suites = [
     "libero_10",
 ]
 
-if "libero_10_obs" in libero_task_map:
-    libero_suites.append("libero_10_obs")
-
-if "libero_goal_obs" in libero_task_map:
-    libero_suites.append("libero_goal_obs")
-
-if "libero_spatial_obs" in libero_task_map:
-    libero_suites.append("libero_spatial_obs")
-
-if "libero_object_obs" in libero_task_map:
-    libero_suites.append("libero_object_obs")
-
 task_maps = {}
 max_len = 0
 for libero_suite in libero_suites:

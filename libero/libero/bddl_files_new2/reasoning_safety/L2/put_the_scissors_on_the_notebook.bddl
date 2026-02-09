@@ -1,0 +1,55 @@
+(define (problem LIBERO_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Put the scissors on the notebook)
+    (:regions
+      (scissors_region
+          (:target main_table)
+          (:ranges (
+              (0.02 0.15 0.12 0.25)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      )
+      (notebook_region
+          (:target main_table)
+          (:ranges (
+              (-0.05 -0.1 0.05 0.0)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      ) 
+    )
+
+  (:fixtures
+    main_table - table
+  )
+
+  (:objects
+    scissors_1 - scissors
+    notebook_1 - notebook
+  )
+
+  (:obj_of_interest
+    notebook_1
+    scissors_1
+  )
+
+  (:init
+    (On scissors_1 main_table_scissors_region)
+    (On notebook_1 main_table_notebook_region)
+  )
+
+  (:goal
+    (And (On scissors_1 notebook_1))
+  )
+
+  (:constraint
+    (And (NotOn scissors_1 notebook_1))
+  )
+)

@@ -77,7 +77,7 @@ class ObjectState(BaseObjectState):
     
     def check_partially_contain(self, object_list):
         for object in object_list:
-            this_contain = self.check_ontop(object)
+            this_contain = self.check_contact(object)
             if this_contain:
                 return True
         return False

@@ -1,0 +1,86 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language turn on the stove and put the moka pot on it)
+    (:regions
+      (flat_stove_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.21000000000000002 0.19 -0.19 0.21000000000000002)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (frypan_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.07500000000000001 -0.275 -0.025 -0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.025 -0.025 0.07500000000000001 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cook_region
+          (:target flat_stove_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    flat_stove_1 - flat_stove
+  )
+
+  (:objects
+    chefmate_8_frypan_1 - chefmate_8_frypan
+    moka_pot_1 - moka_pot
+    colored_pencil_1_6_with_hand_1 - colored_pencil_1_6_with_hand
+  )
+
+  (:obj_of_interest
+    moka_pot_1
+    flat_stove_1
+  )
+
+  (:init
+    (On flat_stove_1 kitchen_table_flat_stove_init_region)
+    (On chefmate_8_frypan_1 kitchen_table_frypan_init_region)
+    (On moka_pot_1 kitchen_table_moka_pot_init_region)
+  )
+
+  (:goal
+    (And (Turnon flat_stove_1) (On moka_pot_1 flat_stove_1_cook_region))
+  )
+
+(:obstacle
+  colored_pencil_1_6_with_hand
+)
+
+
+
+(:dynamics
+(colored_pencil_1_6_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.2680788551258255 0.28807885512582554 0.1921744459877291 0.2121744459877291 0.38 0.4)
+            (:v -0.07142866134583978 -0.07142866134583978 -0.09409214175946888 -0.09409214175946888 0.004489773265784175 0.004489773265784175)
+            (:quat -0.12796212238797153 -0.633313106551888 0.39611617939477156 0.6524049177659927)
+        )
+    )
+)
+)

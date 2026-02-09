@@ -1,0 +1,616 @@
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_apple_pie_1_with_hand.bddl
+apple_pie_1_with_hand     大拇指没有碰到盘子
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_apple_pie_2_with_hand.bddl
+apple_pie_2_with_hand     大拇指没有碰到盘子
+
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bag_of_cookies_3_with_hand.bddl
+bag_of_cookies_3_with_hand     无名指小手指没有碰到
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bobby_pin_1_with_hand.bddl
+bobby_pin_1_with_hand     大拇指没有碰到钉子
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bag_of_rice_1_with_hand.bddl
+bag_of_rice_1_with_hand     只能看到大拇指
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bag_of_rice_2_with_hand.bddl
+bag_of_rice_2_with_hand     抓不住物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bag_of_rice_3_with_hand.bddl
+bag_of_rice_3_with_hand     看不到手指
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_beaker_1_2_with_hand.mp4
+删不掉
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bookend_1_0_with_hand.bddl
+bookend_1_0_with_hand     删除，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bookend_5_with_hand.bddl
+bookend_5_with_hand     抓不住物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bookend_6_with_hand.bddl
+bookend_6_with_hand     删掉，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bookend_7_with_hand.bddl
+bookend_7_with_hand     只有大拇指碰到了
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bottle_of_barbecue_sauce_3_with_hand.bddl
+bottle_of_barbecue_sauce_3_with_hand     大拇指没有碰到瓶盖
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bottle_of_essential_oil_2_with_hand.bddl
+bottle_of_essential_oil_2_with_hand     手没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bottle_of_protein_powder_2_with_hand.bddl
+bottle_of_protein_powder_2_with_hand     无名指小手指没有碰到
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bottle_of_water_1_4_with_hand.bd
+bottle_of_water_1_4_with_hand     感觉可以抓到，但是看不到手指
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_1_1_with_hand.bddl
+bowl_1_1_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_1_6_with_hand.bddl
+bowl_1_6_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_1_with_hand.bddl
+bowl_1_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_2_0_with_hand.bddl
+bowl_2_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_2_2_with_hand.bddl
+bowl_2_2_with_hand     感觉可以抓到，但是抓的位置不对
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_2_5_with_hand.bddl
+bowl_2_5_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_2_6_with_hand.bddl
+bowl_2_6_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_3_5_with_hand.bddl
+bowl_3_5_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_3_7_with_hand.bddl
+bowl_3_7_with_hand     但看图片看不到手，视频中无名指及小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_3_8_with_hand.bddl
+bowl_3_8_with_hand     小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_3_9_with_hand.bddl
+bowl_3_9_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_4_0_with_hand.bddl
+bowl_4_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_4_2_with_hand.bddl
+bowl_4_2_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_4_4_with_hand.bddl
+bowl_4_4_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_4_7_with_hand.bddl
+bowl_4_7_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bowl_9_with_hand.bddl
+bowl_9_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_brown_sugar_1_with_hand.bddl
+box_of_brown_sugar_1_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_cereal_1_0_with_hand.bddl
+box_of_cereal_1_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_coffee_2_with_hand.bddl
+box_of_coffee_2_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_cookies_1_0_with_hand.bddl
+box_of_cookies_1_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_cookies_8_with_hand.bddl
+box_of_cookies_8_with_hand     小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_lemons_1_with_hand.bddl
+box_of_lemons_1_with_hand     大拇指没有碰到
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_sanitary_napkins_2_with_hand.bddl
+box_of_sanitary_napkins_2_with_hand     食指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_vegetable_juice_1_with_hand.bddl
+box_of_vegetable_juice_1_with_hand     小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_box_of_yogurt_4_with_hand.bddl
+box_of_yogurt_4_with_hand     食指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_boxed_cake_1_with_hand.bddl
+boxed_cake_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_bread_slice_3_with_hand.bddl
+bread_slice_3_with_hand     小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_brownie_1_with_hand.bddl
+brownie_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_buret_clamp_1_with_hand.bddl
+buret_clamp_1_with_hand     大拇指食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_baking_mix_2_with_hand.bddl
+can_of_baking_mix_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_baking_mix_3_with_hand.bddl
+can_of_baking_mix_3_with_hand     食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_baking_mix_5_with_hand.bddl
+can_of_baking_mix_5_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_bay_leaves_1_with_hand.bddl
+can_of_bay_leaves_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_corn_2_with_hand.bddl
+can_of_corn_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_soda_1_5_with_hand.bddl
+can_of_soda_1_5_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_soda_1_6_with_hand.bddl
+can_of_soda_1_6_with_hand     食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_can_of_soda_6_with_hand.bddl
+can_of_soda_6_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_candle_holder_5_with_hand.bddl
+candle_holder_5_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_canned_food_4_with_hand.bddl
+canned_food_4_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_canteen_2_with_hand.bddl
+canteen_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cap_1_0_with_hand.bddl
+cap_1_0_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cap_1_3_with_hand.bddl
+cap_1_3_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cap_1_5_with_hand.bddl
+cap_1_5_with_hand     大拇指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_carton_1_with_hand.bddl
+carton_1_with_hand     一片黄，什么都看不见
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_case_of_eyeshadow_1_with_hand.bddl
+case_of_eyeshadow_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cheese_tart_2_with_hand.bddl
+cheese_tart_2_with_hand     大拇指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chestnut_4_with_hand.bddl
+chestnut_4_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopped_lettuce_5_with_hand.bddl
+chopped_lettuce_5_with_hand     所有手指都没碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_0_with_hand.bddl
+chopping_board_1_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_1_with_hand.bddl
+chopping_board_1_1_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_2_with_hand.bddl
+chopping_board_1_2_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_3_with_hand.bddl
+chopping_board_1_3_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_4_with_hand.bddl
+chopping_board_1_4_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_1_5_with_hand.bddl
+chopping_board_1_5_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chopping_board_5_with_hand.bddl
+chopping_board_5_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cinnamon_stick_2_with_hand.bddl
+cinnamon_stick_2_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cinnamon_stick_6_with_hand.bddl
+cinnamon_stick_6_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_clamp_1_with_hand.bddl
+clamp_1_with_hand     感觉大拇指食指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_coaster_1_with_hand.bddl
+coaster_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_chocolate_chip_cookie_2_with_hand.bddl
+chocolate_chip_cookie_2_with_hand      大拇指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_coffee_cup_1_1_with_hand.bddl    
+coffee_cup_1_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_coffee_cup_1_with_hand.bddl
+coffee_cup_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_coffee_cup_6_with_hand.bddl
+coffee_cup_6_with_hand     食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_coffee_cup_8_with_hand.bddl
+coffee_cup_8_with_hand     食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cola_bottle_1_with_hand.bddl
+cola_bottle_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_colored_pencil_1_1_with_hand.bddl
+colored_pencil_1_1_with_hand     手没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_colored_pencil_1_2_with_hand.bddl
+colored_pencil_1_2_with_hand     手没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_colored_pencil_8_with_hand.bddl
+colored_pencil_8_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_comb_1_with_hand.bddl
+comb_1_with_hand     手没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_comic_book_2_with_hand.bddl
+comic_book_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_comic_book_4_with_hand.bddl
+comic_book_4_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_corkscrew_1_with_hand.bddl
+corkscrew_1_with_hand     大拇指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_crayon_1_2_with_hand.bddl
+crayon_1_2_with_hand     大拇指中指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_crayon_4_with_hand.bddl
+crayon_4_with_hand     除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_crayon_5_with_hand.bddl
+crayon_5_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cupcake_4_with_hand.bddl
+cupcake_4_with_hand     食指无名指小拇指没有碰到物体       
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_cupcake_5_with_hand.bddl
+cupcake_5_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_dog_collar_1_with_hand.bddl
+dog_collar_1_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_dowel_1_with_hand.bddl
+dowel_1_with_hand   感觉手没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_dried_apricot_1_with_hand.bddl
+dried_apricot_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_dumpling_1_with_hand.bddl
+dumpling_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_frame_2_with_hand.bddl
+frame_2_with_hand     不知道抓的是什么，手指全部没有碰到
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_french_fry_holder_1_with_hand.bddl
+french_fry_holder_1_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_2_with_hand.bddl
+garlic_2_with_hand    感觉无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_1_with_hand.bddl
+garlic_clove_1_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_2_with_hand.bddl
+garlic_clove_2_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_4_with_hand.bddl
+garlic_clove_4_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_5_with_hand.bddl
+garlic_clove_5_with_hand     不知道抓的是什么，手指全部没有碰到
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_6_with_hand.bddl
+garlic_clove_6_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_7_with_hand.bddl
+garlic_clove_7_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_8_with_hand.bddl
+garlic_clove_8_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_garlic_clove_9_with_hand.bddl
+garlic_clove_9_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_gingerbread_1_with_hand.bddl
+gingerbread_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_goggles_1_with_hand.bddl
+goggles_1_with_hand     大拇指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_gooseberry_1_with_hand.bddl
+gooseberry_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_gravy_boat_1_with_hand.bddl
+gravy_boat_1_with_hand    食指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_apple_2_with_hand.bddl
+half_apple_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_apple_pie_1_with_hand.bddl
+half_apple_pie_1_with_hand     大拇指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_apple_pie_2_with_hand.bddl
+half_apple_pie_2_with_hand    大拇指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_bagel_1_with_hand.bddl
+half_bagel_1_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_bagel_2_with_hand.bddl
+half_bagel_2_with_hand     大拇指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_baguette_2_with_hand.bddl
+half_baguette_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_bok_choy_2_with_hand.bddl
+half_bok_choy_2_with_hand    中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_butter_1_with_hand.bddl
+half_butter_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_butter_2_with_hand.bddl
+half_butter_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_butter_cookie_1_with_hand.bddl
+half_butter_cookie_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_butternut_squash_1_with_hand.bddl
+half_butternut_squash_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_carrot_1_with_hand.bddl
+half_carrot_1_with_hand       中指无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_carrot_2_with_hand.bddl
+half_carrot_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_cheese_danish_1_with_hand.bddl
+half_cheese_danish_1_with_hand     食指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_chocolate_biscuit_1_with_hand.bddl
+half_chocolate_biscuit_1_with_hand    除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_chocolate_biscuit_2_with_hand.bddl
+half_chocolate_biscuit_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_chocolate_chip_cookie_2_with_hand.bddl
+half_chocolate_chip_cookie_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_cinnamon_roll_1_with_hand.bddl
+half_cinnamon_roll_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_cinnamon_roll_2_with_hand.bddl
+half_cinnamon_roll_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_club_sandwich_2_with_hand.bddl
+half_club_sandwich_2_with_hand     只能看到大拇指
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_cucumber_1_with_hand.bddl
+half_cucumber_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_cucumber_2_with_hand.bddl
+half_cucumber_2_with_hand    无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_dried_apricot_1_with_hand.bddl
+half_dried_apricot_1_with_hand     除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_dried_apricot_2_with_hand.bddl
+half_dried_apricot_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_garlic_1_with_hand.bddl
+half_garlic_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_garlic_bread_2_with_hand.bddl
+half_garlic_bread_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_garlic_clove_1_with_hand.bddl
+half_garlic_clove_1_with_hand       中指无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_garlic_clove_2_with_hand.bddl
+half_garlic_clove_2_with_hand     除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_ginger_root_2_with_hand.bddl
+half_ginger_root_2_with_hand  除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_granola_bar_1_with_hand.bddl
+half_granola_bar_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_hotdog_bun_2_with_hand.bddl
+half_hotdog_bun_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_lemon_1_with_hand.bddl
+half_lemon_1_with_hand      中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_lime_2_with_hand.bddl
+half_lime_2_with_han     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_lime_3_with_hand.bddl
+half_lime_3_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_lime_4_with_hand.bddl
+half_lime_4_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_lime_5_with_hand.bddl
+half_lime_5_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_macaroon_1_with_hand.bddl
+half_macaroon_1_with_hand    无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_macaroon_2_with_hand.bddl
+half_macaroon_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_mango_2_with_hand.bddl
+half_mango_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_mozzarella_1_with_hand.bddl
+half_mozzarella_1_with_hand     无名指小手指没有碰到物体
+  
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_mozzarella_2_with_hand.bddl
+half_mozzarella_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_muffin_2_with_hand.bddl
+half_muffin_2_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_nectarine_1_with_hand.bddl
+half_nectarine_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_nectarine_2_with_hand.bddl
+half_nectarine_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_peach_1_with_hand.bddl
+half_peach_1_with_hand      中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_pepperoni_2_with_hand.bddl
+half_pepperoni_2_with_hand     除了食指别的手指都没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_scone_2_with_hand.bddl
+half_scone_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_sourdough_2_with_hand.bddl
+half_sourdough_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_spice_cookie_1_with_hand.bddl
+half_spice_cookie_1_with_hand     大拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_spice_cookie_2_with_hand.bddl
+half_spice_cookie_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_sugar_cookie_1_with_hand.bddl
+half_sugar_cookie_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_sweet_corn_1_with_hand.bddl
+half_sweet_corn_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_swiss_cheese_1_with_hand.bddl
+half_swiss_cheese_1_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_swiss_cheese_2_with_hand.bddl
+half_swiss_cheese_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_tofu_1_with_hand.bddl
+half_tofu_1_with_hand      无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_tofu_2_with_hand.bddl
+half_tofu_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_vidalia_onion_1_with_hand.bddl
+half_vidalia_onion_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_vidalia_onion_2_with_hand.bddl
+half_vidalia_onion_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_walnut_1_with_hand.bddl
+half_walnut_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_walnut_2_with_hand.bddl
+half_walnut_2_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_white_turnip_1_with_hand.bddl
+half_white_turnip_1_with_hand     所有手指都没碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_white_turnip_2_with_hand.bddl
+half_white_turnip_2_with_hand        不知道抓的是什么，中指无名指小拇指应该没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_zucchini_1_with_hand.bddl
+half_zucchini_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_half_zucchini_2_with_hand.bddl
+half_zucchini_2_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hamburger_bun_1_with_hand.bddl
+hamburger_bun_1_with_hand     中指无名指小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hamburger_bun_2_with_hand.bddl
+hamburger_bun_2_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hard_drive_1_with_hand.bddl
+hard_drive_1_with_hand     无名指小手指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_2_with_hand.bddl
+hardback_1_2_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_1_with_hand.bddl
+hardback_1_1_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_3_with_hand.bddl
+hardback_1_3_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_4_with_hand.bddl
+hardback_1_4_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_5_with_hand.bddl
+hardback_1_5_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_6_with_hand.bddl
+hardback_1_6_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_7_with_hand.bddl
+hardback_1_7_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_8_with_hand.bddl
+hardback_1_8_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_1_9_with_hand.bddl
+hardback_1_9_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_0_with_hand.bddl
+hardback_2_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_1_with_hand.bddl
+hardback_2_1_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_2_with_hand.bddl
+hardback_2_2_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_3_with_hand.bddl
+hardback_2_3_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_4_with_hand.bddl
+hardback_2_4_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_5_with_hand.bddl
+hardback_2_5_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_6_with_hand.bddl
+hardback_2_6_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_7_with_hand.bddl
+hardback_2_7_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_8_with_hand.bddl
+hardback_2_8_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_2_9_with_hand.bddl
+hardback_2_9_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_0_with_hand.bddl
+hardback_3_0_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_1_with_hand.bddl
+hardback_3_1_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_2_with_hand.bddl
+hardback_3_2_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_3_with_hand.bddl
+hardback_3_3_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_4_with_hand.bddl
+hardback_34_with_hand     需要注释，但是搜索无结果
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_5_with_hand.bddl
+hardback_3_5_with_hand     小拇指没有碰到物体
+
+/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obj/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it_table_1_hardback_3_6_with_hand.bddl
+hardback_3_6_with_hand     需要注释，但是搜索无结果
+

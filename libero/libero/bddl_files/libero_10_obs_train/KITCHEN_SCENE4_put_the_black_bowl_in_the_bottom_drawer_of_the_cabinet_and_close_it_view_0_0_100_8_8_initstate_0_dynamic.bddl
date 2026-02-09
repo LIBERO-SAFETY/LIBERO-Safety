@@ -1,0 +1,112 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the black bowl in the bottom drawer of the cabinet and close it)
+    (:regions
+      (white_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 0.29 0.01 0.31)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (wine_rack_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.11 -0.31 -0.09000000000000001 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (akita_black_bowl_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.0049999999999999975 -0.07500000000000001 0.055 -0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (wine_bottle_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.175 0.025 -0.125 0.07500000000000001)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target white_cabinet_1)
+      )
+      (top_region
+          (:target white_cabinet_1)
+      )
+      (middle_region
+          (:target white_cabinet_1)
+      )
+      (bottom_region
+          (:target white_cabinet_1)
+      )
+      (top_region
+          (:target wine_rack_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    white_cabinet_1 - white_cabinet
+    wine_rack_1 - wine_rack
+  )
+
+  (:objects
+    akita_black_bowl_1 - akita_black_bowl
+    wine_bottle_1 - wine_bottle
+    bottle_of_lemon_juice_1_with_hand_1 - bottle_of_lemon_juice_1_with_hand
+  )
+
+  (:obj_of_interest
+    akita_black_bowl_1
+    white_cabinet_1
+  )
+
+  (:init
+    (On akita_black_bowl_1 kitchen_table_akita_black_bowl_init_region)
+    (On wine_bottle_1 kitchen_table_wine_bottle_init_region)
+    (On white_cabinet_1 kitchen_table_white_cabinet_init_region)
+    (On wine_rack_1 kitchen_table_wine_rack_init_region)
+    (Open white_cabinet_1_bottom_region)
+  )
+
+  (:goal
+    (And (Close white_cabinet_1_bottom_region) (In akita_black_bowl_1 white_cabinet_1_bottom_region))
+  )
+
+(:obstacle
+  bottle_of_lemon_juice_1_with_hand
+)
+
+
+
+(:dynamics
+(bottle_of_lemon_juice_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.2616653520299947 0.2816653520299947 0.2011103487877328 0.2211103487877328 0.38 0.4)
+            (:v -0.11789419310398223 -0.11789419310398223 -0.01305190719445926 -0.01305190719445926 0.002984969732820645 0.002984969732820645)
+            (:quat -0.23993810905868265 -0.8399145484412023 -0.1950431797429358 0.44601727900824617)
+        )
+    )
+)
+)

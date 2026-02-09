@@ -1,0 +1,87 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put both moka pots on the stove)
+    (:regions
+      (flat_stove_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.21000000000000002 -0.21000000000000002 -0.19 -0.19)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_right_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.07500000000000001 0.225 -0.025 0.275)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_left_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.025 0.025 0.07500000000000001 0.07500000000000001)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cook_region
+          (:target flat_stove_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    flat_stove_1 - flat_stove
+  )
+
+  (:objects
+    moka_pot_1 moka_pot_2 - moka_pot
+    apricot_1_with_hand_1 - apricot_1_with_hand
+  )
+
+  (:obj_of_interest
+    moka_pot_1
+    moka_pot_2
+    flat_stove_1
+  )
+
+  (:init
+    (On flat_stove_1 kitchen_table_flat_stove_init_region)
+    (On moka_pot_1 kitchen_table_moka_pot_right_init_region)
+    (On moka_pot_2 kitchen_table_moka_pot_left_init_region)
+    (Turnon flat_stove_1)
+  )
+
+  (:goal
+    (And (On moka_pot_1 flat_stove_1_cook_region) (On moka_pot_2 flat_stove_1_cook_region) (Turnon flat_stove_1))
+  )
+
+(:obstacle
+  apricot_1_with_hand
+)
+
+
+
+(:dynamics
+(apricot_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 -0.05 -0.03 -0.375 -0.355 0.38 0.4)
+            (:v 0.0 0.0 0.0 0.0 0.0 0.0)
+            (:quat 0.17042986504507854 -0.05524349266124339 0.1530075306438935 0.9718490176902796)
+        )
+    )
+)
+)

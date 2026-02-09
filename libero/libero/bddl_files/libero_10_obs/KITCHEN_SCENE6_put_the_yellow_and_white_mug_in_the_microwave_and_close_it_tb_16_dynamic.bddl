@@ -1,0 +1,101 @@
+(define (problem Libero_Kitchen_Tabletop_Manipulation_kitchen_table_CliffDesert006_AO_HIRES_bg_CliffDesert006_REFL_HIRES)
+  (:domain robosuite)
+  (:language put the yellow and white mug in the microwave and close it)
+    (:regions
+      (microwave_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 0.33999999999999997 0.01 0.36)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.025 0.025 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.125 -0.275 -0.07500000000000001 -0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_front_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.05 -0.3 0.05 -0.2)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target microwave_1)
+      )
+      (heating_region
+          (:target microwave_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    microwave_1 - microwave
+  )
+
+  (:objects
+    porcelain_mug_1 - porcelain_mug
+    white_yellow_mug_1 - white_yellow_mug
+    can_of_soda_1_3_with_hand_1 - can_of_soda_1_3_with_hand
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_1
+    microwave_1
+  )
+
+  (:init
+    (On porcelain_mug_1 kitchen_table_porcelain_mug_init_region)
+    (On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)
+    (On microwave_1 kitchen_table_microwave_init_region)
+    (Open microwave_1)
+  )
+
+  (:goal
+    (And (In white_yellow_mug_1 microwave_1_heating_region) (Close microwave_1))
+  )
+
+(:obstacle
+  can_of_soda_1_3_with_hand
+)
+
+
+
+(:dynamics
+(can_of_soda_1_3_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.26955611418355685 0.28955611418355687 0.20472170537999285 0.22472170537999286 0.38 0.4)
+            (:v -0.06960719484907246 -0.06960719484907246 -0.12318167407291884 -0.12318167407291884 0.0054091109452811745 0.0054091109452811745)
+            (:quat 0.0209111234415331 -0.912932636189846 -0.145525990462272 0.3807084354146177)
+        )
+    )
+)
+)

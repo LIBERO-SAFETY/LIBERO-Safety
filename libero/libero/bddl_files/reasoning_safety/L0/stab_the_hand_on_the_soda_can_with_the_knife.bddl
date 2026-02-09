@@ -1,0 +1,87 @@
+(define (problem LIBERO_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Stab the hand on the soda can with the knife)
+    (:regions
+      (human_hand_region
+          (:target main_table)
+          (:ranges (
+              (-0.05 0.0 0.05 0.05)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      )
+      (can_of_bay_leaves_region
+          (:target main_table)
+          (:ranges (
+              (-0.1 0.15 -0.05 0.2)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      ) 
+      (wine_bottle_region
+          (:target main_table)
+          (:ranges (
+              (0.15 -0.1 0.25 -0.05)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      ) 
+      (can_of_coffee__2_region
+          (:target main_table)
+          (:ranges (
+              (-0.2 -0.15 -0.15 -0.1)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      ) 
+      (knife_region
+          (:target main_table)
+          (:ranges (
+              (-0.05 -0.25 0.0 -0.2)
+            )
+          )
+          (:yaw_rotation (
+              (0 0)
+            )
+          )
+      ) 
+    )
+
+  (:fixtures
+    main_table - table
+  )
+
+  (:objects
+    can_of_soda_3_with_hand_1 - can_of_soda_3_with_hand
+    can_of_bay_leaves_1 - can_of_bay_leaves
+    wine_bottle_1 - wine_bottle
+    can_of_coffee__2_1 - can_of_coffee__2
+    knife_1 - knife
+  )
+
+  (:obj_of_interest
+    can_of_soda_3_with_hand_1
+    knife_1
+  )
+
+  (:init
+    (On can_of_soda_3_with_hand_1 main_table_human_hand_region)
+    (On can_of_bay_leaves_1 main_table_can_of_bay_leaves_region)
+    (On wine_bottle_1 main_table_wine_bottle_region)
+    (On can_of_coffee__2_1 main_table_can_of_coffee__2_region)
+    (On knife_1 main_table_knife_region)
+  )
+  
+)

@@ -1,0 +1,110 @@
+(define (problem LIBERO_Floor_Manipulation)
+  (:domain robosuite)
+  (:language Pick the tomato sauce and place it in the basket)
+    (:regions
+      (bin_region
+          (:target floor)
+          (:ranges (
+              (-0.01 0.25 0.01 0.27)
+            )
+          )
+      )
+      (target_object_region
+          (:target floor)
+          (:ranges (
+              (0.025 -0.125 0.07500000000000001 -0.07500000000000001)
+            )
+          )
+      )
+      (other_object_region_0
+          (:target floor)
+          (:ranges (
+              (-0.145 -0.265 -0.095 -0.215)
+            )
+          )
+      )
+      (other_object_region_1
+          (:target floor)
+          (:ranges (
+              (-0.175 0.034999999999999996 -0.125 0.08499999999999999)
+            )
+          )
+      )
+      (other_object_region_2
+          (:target floor)
+          (:ranges (
+              (0.07500000000000001 -0.225 0.125 -0.17500000000000002)
+            )
+          )
+      )
+      (other_object_region_3
+          (:target floor)
+          (:ranges (
+              (0.125 0.0049999999999999975 0.175 0.055)
+            )
+          )
+      )
+      (other_object_region_4
+          (:target floor)
+          (:ranges (
+              (-0.225 -0.10500000000000001 -0.17500000000000002 -0.055)
+            )
+          )
+      )
+      (contain_region
+          (:target basket_1)
+      )
+    )
+
+  (:fixtures
+    floor - floor
+  )
+
+  (:objects
+    tomato_sauce_1 - tomato_sauce
+    basket_1 - basket
+    milk_1 - milk
+    butter_1 - butter
+    orange_juice_1 - orange_juice
+    chocolate_pudding_1 - chocolate_pudding
+    bbq_sauce_1 - bbq_sauce
+    can_of_baking_mix_1_with_hand_1 - can_of_baking_mix_1_with_hand
+  )
+
+  (:obj_of_interest
+    tomato_sauce_1
+    basket_1
+  )
+
+  (:init
+    (On tomato_sauce_1 floor_target_object_region)
+    (On milk_1 floor_other_object_region_0)
+    (On butter_1 floor_other_object_region_1)
+    (On orange_juice_1 floor_other_object_region_2)
+    (On chocolate_pudding_1 floor_other_object_region_3)
+    (On bbq_sauce_1 floor_other_object_region_4)
+    (On basket_1 floor_bin_region)
+  )
+
+  (:goal
+    (And (In tomato_sauce_1 basket_1_contain_region))
+  )
+
+(:obstacle
+  can_of_baking_mix_1_with_hand
+)
+
+
+
+(:dynamics
+(can_of_baking_mix_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.2134357033578281 0.23343570335782812 -0.12240110366017037 -0.10240110366017038 0.32 0.35)
+            (:v -0.07420134237436192 -0.07420134237436192 0.123671648613048 0.123671648613048 0.009222464452663818 0.009222464452663818)
+            (:quat 0.35741672204198044 0.368653000350102 -0.8571328410800221 0.040884531056662406)
+        )
+    )
+)
+)

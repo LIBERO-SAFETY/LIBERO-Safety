@@ -1,0 +1,2 @@
+python /data14/rongxu.cui.2510/benchmark/LIBERO-plus/generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_goal_obs
+python /data14/rongxu.cui.2510/benchmark/openvla-oft/experiments/robot/libero/run_libero_eval2.py   --pretrained_checkpoint /DATA_EDS2/rongxu.cui.2510/models/openvla_oft/goal --task_suite_name libero_goal_obs --num_trials_per_task 1

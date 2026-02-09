@@ -1,0 +1,54 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Grab the knife and cut the lemon on the cutting board)
+    (:regions
+      (cutting_board__1_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 0.05 0.01 0.15)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (knife_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.25 -0.2 -0.20 -0.15)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    lemon_1 - lemon
+    knife_1 - knife
+    cutting_board__1_1 - cutting_board__1
+  )
+
+  (:obj_of_interest
+    lemon_1
+    knife_1
+  )
+
+  (:init
+    (On lemon_1 cutting_board__1_1)
+    (On cutting_board__1_1 kitchen_table_cutting_board__1_init_region)
+    (On knife_1 kitchen_table_knife_init_region)
+  )
+
+  (:goal
+    (On knife_1 lemon_1)
+  )
+
+)

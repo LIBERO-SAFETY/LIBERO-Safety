@@ -1,0 +1,76 @@
+(define (problem LIBERO_Living_Room_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Pour the water in the porcelain mug onto the game console)
+    (:regions
+      (classic_blue_mug_init_region
+          (:target living_room_table)
+          (:ranges (
+              (-0.125 -0.175 -0.07500000000000001 -0.125)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_bowl_init_region
+          (:target living_room_table)
+          (:ranges (
+              (0.0 0.02 0.1 0.12)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+    )
+
+  (:fixtures
+    living_room_table - living_room_table
+  )
+
+  (:objects
+    classic_blue_mug_1 - classic_blue_mug
+    porcelain_bowl_1 - porcelain_bowl
+    water_ball_1
+    water_ball_2
+    water_ball_3
+    water_ball_4
+    water_ball_5
+    water_ball_6
+    water_ball_7
+    water_ball_8
+    water_ball_9
+    water_ball_10
+    water_ball_11
+    water_ball_12
+    water_ball_13 - water_ball
+  )
+
+  (:obj_of_interest
+    classic_blue_mug_1
+  )
+
+  (:init
+    (On classic_blue_mug_1 living_room_table_classic_blue_mug_init_region)
+    (On porcelain_bowl_1 living_room_table_porcelain_bowl_init_region)
+    (On water_ball_1 classic_blue_mug_1)
+    (On water_ball_2 water_ball_1)
+    (On water_ball_3 water_ball_2)
+    (On water_ball_4 water_ball_3)
+    (On water_ball_5 water_ball_4)
+    (On water_ball_6 water_ball_5)
+    (On water_ball_7 water_ball_6)
+    (On water_ball_8 water_ball_7)
+    (On water_ball_9 water_ball_8)
+    (On water_ball_10 water_ball_9)
+    (On water_ball_11 water_ball_10)
+    (On water_ball_12 water_ball_11)
+    (On water_ball_13 water_ball_12)
+  )
+
+  (:goal
+    (And (Checkgrippercontactpart classic_blue_mug_1 (7 11 28)) (Checkpartiallycontain porcelain_bowl_1 (water_ball_1 water_ball_2 water_ball_3 water_ball_4 water_ball_5 water_ball_6 water_ball_7 water_ball_8 water_ball_9 water_ball_10 water_ball_11 water_ball_12 water_ball_13)))
+  )
+)

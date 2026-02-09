@@ -1,0 +1,86 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language turn on the stove and put the moka pot on it)
+    (:regions
+      (flat_stove_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.20800929038765076 0.18041134260800198 -0.18800929038765074 0.200411342608002)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (frypan_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.05709665551345257 -0.27010603516180015 -0.007096655513452552 -0.2201060351618001)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.025264148186810765 -0.01842713712496904 0.07526414818681078 0.03157286287503097)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cook_region
+          (:target flat_stove_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    flat_stove_1 - flat_stove
+  )
+
+  (:objects
+    chefmate_8_frypan_1 - chefmate_8_frypan
+    moka_pot_1 - moka_pot
+    can_of_soda_3_with_hand_1 - can_of_soda_3_with_hand
+  )
+
+  (:obj_of_interest
+    moka_pot_1
+    flat_stove_1
+  )
+
+  (:init
+    (On flat_stove_1 kitchen_table_flat_stove_init_region)
+    (On chefmate_8_frypan_1 kitchen_table_frypan_init_region)
+    (On moka_pot_1 kitchen_table_moka_pot_init_region)
+  )
+
+  (:goal
+    (And (Turnon flat_stove_1) (On moka_pot_1 flat_stove_1_cook_region))
+  )
+
+(:obstacle
+  can_of_soda_3_with_hand
+)
+
+
+
+(:dynamics
+(can_of_soda_3_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.27603013232134815 0.29603013232134817 0.23601377317848893 0.25601377317848895 0.38 0.4)
+            (:v -0.06410505913421514 -0.06410505913421514 -0.09080998441272607 -0.09080998441272607 0.007981294582476347 0.007981294582476347)
+            (:quat -0.16513820769687595 0.12441251388522308 0.5227373669401388 0.8270408357221022)
+        )
+    )
+)
+)

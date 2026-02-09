@@ -1,0 +1,87 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put both moka pots on the stove)
+    (:regions
+      (flat_stove_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.21766614139493654 -0.2397889777786656 -0.19766614139493652 -0.21978897777866557)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_right_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.08084964071742434 0.23571200712657975 -0.030849640717424333 0.2857120071265798)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (moka_pot_left_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.05503725931546731 0.012724840546732622 0.10503725931546733 0.06272484054673264)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cook_region
+          (:target flat_stove_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    flat_stove_1 - flat_stove
+  )
+
+  (:objects
+    moka_pot_1 moka_pot_2 - moka_pot
+    bottle_of_catsup_4_with_hand_1 - bottle_of_catsup_4_with_hand
+  )
+
+  (:obj_of_interest
+    moka_pot_1
+    moka_pot_2
+    flat_stove_1
+  )
+
+  (:init
+    (On flat_stove_1 kitchen_table_flat_stove_init_region)
+    (On moka_pot_1 kitchen_table_moka_pot_right_init_region)
+    (On moka_pot_2 kitchen_table_moka_pot_left_init_region)
+    (Turnon flat_stove_1)
+  )
+
+  (:goal
+    (And (On moka_pot_1 flat_stove_1_cook_region) (On moka_pot_2 flat_stove_1_cook_region) (Turnon flat_stove_1))
+  )
+
+(:obstacle
+  bottle_of_catsup_4_with_hand
+)
+
+
+
+(:dynamics
+(bottle_of_catsup_4_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.26034196789991415 0.28034196789991417 -0.2532223221847853 -0.23322232218478528 0.38 0.4)
+            (:v -0.1181922154319265 -0.1181922154319265 -0.04637843095645195 -0.04637843095645195 0.0065266245197124996 0.0065266245197124996)
+            (:quat -0.595380866247099 -0.47670349900745485 0.12673897218193853 0.6342023581406564)
+        )
+    )
+)
+)

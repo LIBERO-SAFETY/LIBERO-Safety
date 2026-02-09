@@ -1,0 +1,110 @@
+(define (problem LIBERO_Living_Room_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the white mug on the left plate and put the yellow and white mug on the right plate)
+    (:regions
+      (plate_left_region
+          (:target living_room_table)
+          (:ranges (
+              (0.02149940419277601 -0.3215399060639889 0.07149940419277606 -0.27153990606398887)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (plate_right_region
+          (:target living_room_table)
+          (:ranges (
+              (-0.0032095523668557654 0.26271040796587886 0.04679044763314428 0.3127104079658789)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_init_region
+          (:target living_room_table)
+          (:ranges (
+              (-0.13799471305937647 -0.19302695061837433 -0.08799471305937648 -0.14302695061837434)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target living_room_table)
+          (:ranges (
+              (-0.02902034686150323 0.09073526182378028 0.02097965313849678 0.1407352618237803)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (red_coffee_mug_init_region
+          (:target living_room_table)
+          (:ranges (
+              (-0.25457595855997506 -0.03717003089920268 -0.20457595855997507 0.012829969100797329)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+    )
+
+  (:fixtures
+    living_room_table - living_room_table
+  )
+
+  (:objects
+    porcelain_mug_1 - porcelain_mug
+    red_coffee_mug_1 - red_coffee_mug
+    white_yellow_mug_1 - white_yellow_mug
+    plate_1 plate_2 - plate
+    brussels_sprouts_2_with_hand_1 - brussels_sprouts_2_with_hand
+  )
+
+  (:obj_of_interest
+    plate_1
+    plate_2
+    white_yellow_mug_1
+    porcelain_mug_1
+  )
+
+  (:init
+    (On plate_1 living_room_table_plate_left_region)
+    (On plate_2 living_room_table_plate_right_region)
+    (On red_coffee_mug_1 living_room_table_red_coffee_mug_init_region)
+    (On white_yellow_mug_1 living_room_table_white_yellow_mug_init_region)
+    (On porcelain_mug_1 living_room_table_porcelain_mug_init_region)
+  )
+
+  (:goal
+    (And (On porcelain_mug_1 plate_1) (On white_yellow_mug_1 plate_2))
+  )
+
+(:obstacle
+  brussels_sprouts_2_with_hand
+)
+
+
+
+(:dynamics
+(brussels_sprouts_2_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.2783936090446293 0.2983936090446293 -0.24307111625612648 -0.22307111625612647 0.38 0.4)
+            (:v -0.08715845142140259 -0.08715845142140259 0.0817819654944979 0.0817819654944979 0.007716716817090078 0.007716716817090078)
+            (:quat 0.5646782544079337 -0.513775142623257 0.08115486429868053 0.6407709885925889)
+        )
+    )
+)
+)

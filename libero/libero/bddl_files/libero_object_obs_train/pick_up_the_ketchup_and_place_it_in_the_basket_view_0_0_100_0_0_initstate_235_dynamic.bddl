@@ -1,0 +1,110 @@
+(define (problem LIBERO_Floor_Manipulation)
+  (:domain robosuite)
+  (:language Pick the ketchup and place it in the basket)
+    (:regions
+      (bin_region
+          (:target floor)
+          (:ranges (
+              (-0.01 0.25 0.01 0.27)
+            )
+          )
+      )
+      (target_object_region
+          (:target floor)
+          (:ranges (
+              (-0.145 -0.265 -0.095 -0.215)
+            )
+          )
+      )
+      (other_object_region_0
+          (:target floor)
+          (:ranges (
+              (0.025 -0.125 0.07500000000000001 -0.07500000000000001)
+            )
+          )
+      )
+      (other_object_region_1
+          (:target floor)
+          (:ranges (
+              (-0.175 0.034999999999999996 -0.125 0.08499999999999999)
+            )
+          )
+      )
+      (other_object_region_2
+          (:target floor)
+          (:ranges (
+              (0.07500000000000001 -0.225 0.125 -0.17500000000000002)
+            )
+          )
+      )
+      (other_object_region_3
+          (:target floor)
+          (:ranges (
+              (0.125 0.0049999999999999975 0.175 0.055)
+            )
+          )
+      )
+      (other_object_region_4
+          (:target floor)
+          (:ranges (
+              (-0.225 -0.10500000000000001 -0.17500000000000002 -0.055)
+            )
+          )
+      )
+      (contain_region
+          (:target basket_1)
+      )
+    )
+
+  (:fixtures
+    floor - floor
+  )
+
+  (:objects
+    ketchup_1 - ketchup
+    basket_1 - basket
+    bbq_sauce_1 - bbq_sauce
+    salad_dressing_1 - salad_dressing
+    alphabet_soup_1 - alphabet_soup
+    cream_cheese_1 - cream_cheese
+    milk_1 - milk
+    box_of_baking_soda_1_with_hand_1 - box_of_baking_soda_1_with_hand
+  )
+
+  (:obj_of_interest
+    ketchup_1
+    basket_1
+  )
+
+  (:init
+    (On ketchup_1 floor_target_object_region)
+    (On bbq_sauce_1 floor_other_object_region_0)
+    (On salad_dressing_1 floor_other_object_region_1)
+    (On alphabet_soup_1 floor_other_object_region_2)
+    (On cream_cheese_1 floor_other_object_region_3)
+    (On milk_1 floor_other_object_region_4)
+    (On basket_1 floor_bin_region)
+  )
+
+  (:goal
+    (And (In ketchup_1 basket_1_contain_region))
+  )
+
+(:obstacle
+  box_of_baking_soda_1_with_hand
+)
+
+
+
+(:dynamics
+(box_of_baking_soda_1_with_hand_1
+        (:type kinematic)
+        (:traj
+            (:kind linear)
+            (:p0 0.165671961963196 0.18567196196319602 0.07251831881667571 0.0925183188166757 0.32 0.35)
+            (:v -0.10152112219508136 -0.10152112219508136 0.10256696197527305 0.10256696197527305 0.0024581859012754136 0.0024581859012754136)
+            (:quat 0.07560767274578975 -0.43394599066582473 0.04526126675577195 0.8966190800661585)
+        )
+    )
+)
+)

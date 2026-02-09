@@ -7,9 +7,6 @@ import random
 
 pi = np.pi
 
-# True: ranges, False: ranges2
-ranges1or2_flag = False
-
 def get_regions(t, regions, group):
     group.pop(0)
     while group:
@@ -29,23 +26,11 @@ def get_regions(t, regions, group):
                 region_dict["target"] = attribute[1]
                 target_name = attribute[1]
             elif attribute[0] == ":ranges":
-                if ranges1or2_flag:
-                    for rect_range in attribute[1]:
-                        assert (
-                            len(rect_range) == 4
-                        ), f"Dimension of rectangular range mismatched!!, supposed to be 4, only found {len(rect_range)}"
-                        region_dict["ranges"].append([float(x) for x in rect_range])
-                else:
-                    pass
-            elif attribute[0] == ":ranges2":
-                if not ranges1or2_flag:
-                    for rect_range in attribute[1]:
-                        assert (
-                            len(rect_range) == 4
-                        ), f"Dimension of rectangular range mismatched!!, supposed to be 4, only found {len(rect_range)}"
-                        region_dict["ranges"].append([float(x) for x in rect_range])
-                else:
-                    pass
+                for rect_range in attribute[1]:
+                    assert (
+                        len(rect_range) == 4
+                    ), f"Dimension of rectangular range mismatched!!, supposed to be 4, only found {len(rect_range)}"
+                    region_dict["ranges"].append([float(x) for x in rect_range])
             elif attribute[0] == ":yaw_rotation":
                 for value in attribute[1]:
                     region_dict["yaw_rotation"] = [eval(x) for x in value]

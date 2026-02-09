@@ -1,0 +1,106 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the yellow and white mug in the microwave and close it)
+    (:regions
+      (microwave_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.040772969126076135 0.3151716280505741 -0.020772969126076117 0.3351716280505741)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (white_yellow_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.023815305554821725 -0.06310473351364351 0.026184694445178278 -0.01310473351364351)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.16192065798789923 -0.26973703965323875 -0.11192065798789923 -0.2197370396532387)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (porcelain_mug_front_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01860676164428232 -0.3165194775140487 0.08139323835571768 -0.2165194775140487)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target microwave_1)
+      )
+      (heating_region
+          (:target microwave_1)
+      )
+        (obs_init_region
+        (:target kitchen_table)
+        (:ranges (
+            (-0.02 -0.29 0.02 -0.27)
+          )
+        )
+        (:yaw_rotation (
+            (0.0 0.0)
+          )
+        )
+    )
+    (top_side
+        (:target white_place_box_1)
+    )
+)
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    microwave_1 - microwave
+    white_place_box_1 - white_place_box
+  )
+
+  (:objects
+    porcelain_mug_1 - porcelain_mug
+    white_yellow_mug_1 - white_yellow_mug
+    bottle_of_sake__9_1 - bottle_of_sake__9
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_1
+    microwave_1
+  )
+
+  (:init
+    (On porcelain_mug_1 kitchen_table_porcelain_mug_init_region)
+    (On white_yellow_mug_1 kitchen_table_white_yellow_mug_init_region)
+    (On microwave_1 kitchen_table_microwave_init_region)
+    (Open microwave_1)
+      (On white_place_box_1 kitchen_table_obs_init_region)
+    (On bottle_of_sake__9_1 white_place_box_1_top_side)
+)
+
+  (:goal
+    (And (In white_yellow_mug_1 microwave_1_heating_region) (Close microwave_1))
+  )
+
+(:obstacle
+  bottle_of_sake__9
+)
+
+
+)

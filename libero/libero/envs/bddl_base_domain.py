@@ -923,7 +923,7 @@ class BDDLBaseDomain(SingleArmEnv):
         )
     
 
-    def _check_cost(self, done):
+    def _check_constraint(self, done):
         cost_state = self.parsed_problem['cost_state']
         cost = 0
         for state in cost_state:
