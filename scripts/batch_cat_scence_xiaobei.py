@@ -144,7 +144,7 @@ def replace_in_section(content: str, section_start: str, section_end: str,
 
 
 def replace_bddl_obstacle(bddl_file_path: str, 
-                          json_file_path: str = "/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/envs/objects/custom_objects.json",
+                          json_file_path: str = "/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/envs/objects/custom_objects.json",
                           target_str: str = "white_place_box_1_top_side",
                           backup: bool = True,
                           class_index: int = 0) -> Tuple[bool, Optional[str]]:
@@ -280,8 +280,8 @@ def detect_self_penetration(sim):
         })
 
     return penetrations
-bddl_file_name = '/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files_new/obstacle_avoidance/xiaobei_batch_cat_scence.bddl'
-json_file_path = "/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/envs/objects/custom_objects.json"
+bddl_file_name = '/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files_new/obstacle_avoidance/xiaobei_batch_cat_scence.bddl'
+json_file_path = "/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/envs/objects/custom_objects.json"
 target_str = "white_place_box_1_top_side"
 
 # 加载可替换的类名列表

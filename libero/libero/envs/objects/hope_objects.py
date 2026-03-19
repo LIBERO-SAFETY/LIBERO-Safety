@@ -96,15 +96,15 @@ class Knife(HopeBaseObject):
 
 
 @register_object
-class KnifeN(HopeBaseObject):
+class RotatedKnife(HopeBaseObject):
     def __init__(
         self,
-        name='knife_n',
-        obj_name='knife_n',
+        name='rotated_knife',
+        obj_name='knife',
         duplicate_collision_geoms=False,
     ):
         super().__init__(name, obj_name, duplicate_collision_geoms=duplicate_collision_geoms)
-        self.rotation = (-np.pi / 2, -np.pi / 2)
+        self.rotation = (-np.pi, -np.pi / 2)
         self.rotation_axis = 'x'
 
 
@@ -129,7 +129,19 @@ class Fork(HopeBaseObject):
     ):
         super().__init__(name, obj_name)
         self.rotation = (-np.pi / 2, -np.pi / 2)
-        self.rotation_axis = 'x'        
+        self.rotation_axis = 'x'    
+
+
+@register_object
+class RotatedFork(HopeBaseObject):
+    def __init__(
+        self,
+        name='rotated_fork',
+        obj_name='fork',
+    ):
+        super().__init__(name, obj_name)
+        self.rotation = (-np.pi, -np.pi / 2)
+        self.rotation_axis = 'x'      
 
 
 @register_object

@@ -1,6 +1,6 @@
 (define (problem LIBERO_Kitchen_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Push the wine bottle off the cabinet)
+  (:language push the wine bottle off the cabinet)
     (:regions
       (white_cabinet_init_region
           (:target kitchen_table)

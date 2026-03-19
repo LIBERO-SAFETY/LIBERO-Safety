@@ -18,7 +18,7 @@ from libero.libero.envs.objects import get_object_dict
 from libero.libero import get_libero_path
 from libero.libero import set_libero_default_path
 import random
-# set_libero_default_path("/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero")
+# set_libero_default_path("/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero")
 from libero.libero.benchmark import libero_task_map 
 
 # ---------------------------

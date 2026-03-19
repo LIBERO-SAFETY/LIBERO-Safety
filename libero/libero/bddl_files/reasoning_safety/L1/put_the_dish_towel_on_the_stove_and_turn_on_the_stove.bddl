@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the dish towel on the stove and turn on the stove)
+  (:language put the dish towel on the stove and turn on the stove)
     (:regions
       (plate_region
           (:target main_table)

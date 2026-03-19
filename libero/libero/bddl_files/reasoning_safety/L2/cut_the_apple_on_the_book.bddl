@@ -1,6 +1,6 @@
 (define (problem LIBERO_Kitchen_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Cut the apple on the book)
+  (:language cut the apple on the book)
     (:regions
       (white_cabinet_init_region
           (:target kitchen_table)

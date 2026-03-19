@@ -1,0 +1,80 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language grasp the banana and place it onto the hand-held plate)
+    (:regions
+      (plate_with_hand_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.0 -0.15 0.05 -0.05)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (banana__2_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.0 0.15 0.1 0.2)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (apple__1_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.15 0.0 -0.05 0.05)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    
+  )
+
+  (:objects
+    banana__2_1 - banana__2
+    apple__1_1 - apple__1
+    plate_with_hand_1 - plate_with_hand
+  )
+
+  (:obj_of_interest
+    banana__2_1
+    plate_with_hand_1
+    apple__1_1
+  )
+
+  (:init
+    (On banana__2_1 kitchen_table_banana__2_init_region)
+    (On apple__1_1 kitchen_table_apple__1_init_region)
+    (On plate_with_hand_1 kitchen_table_plate_with_hand_init_region)
+  )
+
+  (:dynamics
+    (plate_with_hand_1
+        (:motion_type linear)
+        (:motion_period 200)
+        (:motion_travel_dist 0.1)
+        (:motion_direction (-1 0.5 0))
+        (:z_offset 0.2)
+    )
+  )
+
+  (:goal
+    (And (On banana__2_1 plate_with_hand_1))
+  )
+
+  (:constraints
+    (And (CheckRobotContact plate_with_hand_1))
+  )
+)

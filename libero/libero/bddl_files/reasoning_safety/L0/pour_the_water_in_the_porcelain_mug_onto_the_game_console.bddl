@@ -1,6 +1,6 @@
 (define (problem LIBERO_Living_Room_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Pour the water in the porcelain mug onto the game console)
+  (:language pour the water in the porcelain mug onto the game console)
     (:regions
       (porcelain_mug_init_region
           (:target living_room_table)

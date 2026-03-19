@@ -1,2 +1,2 @@
-/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet copy 2.bddl
-/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet copy.bddl
+/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet copy 2.bddl
+/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet copy.bddl

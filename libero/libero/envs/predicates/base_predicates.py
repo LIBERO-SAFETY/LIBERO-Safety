@@ -131,24 +131,14 @@ class Fall(UnaryAtomic):
         return arg.fall()
 
 
+class CheckGripperForce(UnaryAtomic):
+    def __call__(self, arg1):
+        return arg1.check_gripper_force()
+
+
 class CheckForce(UnaryAtomic):
     def __call__(self, arg1, arg2):
         return arg1.check_force(arg2)
-
-
-class CheckDistance(UnaryAtomic):
-    def __call__(self, arg1, arg2):
-        return arg1.check_distance(arg2)
-
-
-class CheckGripperDistance(UnaryAtomic):
-    def __call__(self, arg):
-        return arg.check_gripper_distance()
-
-
-class CheckGripperDistancePart(UnaryAtomic):
-    def __call__(self, arg1, arg2):
-        return arg1.check_gripper_distance_part(arg2)
 
 
 class InContactPart(UnaryAtomic):
@@ -168,6 +158,11 @@ class CheckPartPartiallyContain(UnaryAtomic):
 class CheckGripperContact(UnaryAtomic):
     def __call__(self, arg1):
         return arg1.check_gripper_contact()
+
+
+class CheckRobotContact(UnaryAtomic):
+    def __call__(self, arg1):
+        return arg1.check_robot_contact()
 
 
 class CheckContact(UnaryAtomic):

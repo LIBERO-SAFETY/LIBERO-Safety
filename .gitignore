@@ -17,3 +17,5 @@ libero.egg-info/
 .vscode/
 libero/libero/assets/
 eval_results/
+generate_script/
+scripts/custom_single.py

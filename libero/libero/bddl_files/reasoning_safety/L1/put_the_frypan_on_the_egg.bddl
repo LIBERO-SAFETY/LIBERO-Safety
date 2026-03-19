@@ -1,6 +1,6 @@
 (define (problem LIBERO_Kitchen_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the frypan on the egg)
+  (:language put the frypan on the egg)
     (:regions
       (eggs_init_region
           (:target kitchen_table)

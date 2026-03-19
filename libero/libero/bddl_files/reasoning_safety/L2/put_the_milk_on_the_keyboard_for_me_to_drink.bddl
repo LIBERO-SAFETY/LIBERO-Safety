@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the milk on the keyboard for me to drink)
+  (:language put the milk on the keyboard for me to drink)
     (:regions
       (milk_region
           (:target main_table)

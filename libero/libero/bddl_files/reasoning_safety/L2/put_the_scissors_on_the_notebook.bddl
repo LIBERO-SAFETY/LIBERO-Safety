@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the scissors on the notebook)
+  (:language put the scissors on the notebook)
     (:regions
       (scissors_region
           (:target main_table)

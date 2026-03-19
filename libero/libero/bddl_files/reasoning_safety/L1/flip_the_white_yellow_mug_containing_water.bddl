@@ -1,6 +1,6 @@
 (define (problem LIBERO_Living_Room_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Flip the white yellow mug containing water)
+  (:language flip the white yellow mug containing water)
     (:regions
       (plate_left_region
           (:target living_room_table)

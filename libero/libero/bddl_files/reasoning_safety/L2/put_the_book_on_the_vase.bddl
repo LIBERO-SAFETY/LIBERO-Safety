@@ -1,6 +1,6 @@
 (define (problem LIBERO_Study_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the book on the vase)
+  (:language put the book on the vase)
     (:regions
       (vase_init_region
           (:target study_table)

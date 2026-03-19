@@ -8,7 +8,7 @@ import shutil
 import textwrap
 import json
 import re
-import astor
+# import astor
 import ast
 from libero.libero.envs import OffScreenRenderEnv
 from PIL import Image
@@ -18,8 +18,8 @@ from libero.libero import get_libero_path
 from libero.libero import set_libero_default_path
 import random
 from typing import List
-# set_libero_default_path("/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero")
-from libero.libero.benchmark import libero_task_map 
+# set_libero_default_path("/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero")
+# from libero.libero.benchmark import libero_task_map 
 
 # ---------------------------
 # Predefined dynamics templates (parameterized)
@@ -1017,262 +1017,266 @@ def append_unique(filename, text):
 def main():
     # np.random.seed(42)
     # random.seed()
-    p = argparse.ArgumentParser(description="Add objects to (:objects ...) and optionally add per-object :dynamics entries (per-object templates supported).")
-    p.add_argument("--backup", action="store_true", default=False, help="create backup .bak (default True)")
-    p.add_argument("--train", action="store_true", default=True, help="train objects")
-    p.add_argument("--libero_task", type=str, default="libero_goal", help="libero task name")
+    # p = argparse.ArgumentParser(description="Add objects to (:objects ...) and optionally add per-object :dynamics entries (per-object templates supported).")
+    # p.add_argument("--backup", action="store_true", default=False, help="create backup .bak (default True)")
+    # p.add_argument("--train", action="store_true", default=True, help="train objects")
+    # p.add_argument("--libero_task", type=str, default="libero_goal", help="libero task name")
 
-    args = p.parse_args()
+    # args = p.parse_args()
     object_dict = get_object_dict()
-
+    names = [name 
+        for name, cls in object_dict.items()
+    ]
+    
     filtered_names = [name 
         for name, cls in object_dict.items()
         if 'with_hand' in name
     ]
-    train_names = []
-    test_names = []
-    table_test_names = []
-    table_train_names = []
-    test_count = 0
-    table_names = [name for name, clas in object_dict.items() 
-    if ('libero.libero.envs.objects.custom_objects' in clas.__module__ and 'with_hand' not in clas.__module__ and 'bottle' in name)]
-    for name in filtered_names:   
-        parts = name.split('_')
-        obj_id = int(parts[-3])
-        if obj_id > 2:
-            test_names.append(name)
-        else:
-            train_names.append(name)
-    for name in table_names:   
-        parts = name.split('_')
-        if parts[-1].isdigit() and int(parts[-1]) > 2:
-            table_test_names.append(name)
-        else:
-            table_train_names.append(name)
+    import pdb; pdb.set_trace()
+    # train_names = []
+    # test_names = []
+    # table_test_names = []
+    # table_train_names = []
+    # test_count = 0
+    # table_names = [name for name, clas in object_dict.items() 
+    # if ('libero.libero.envs.objects.custom_objects' in clas.__module__ and 'with_hand' not in clas.__module__ and 'bottle' in name)]
+    # for name in filtered_names:   
+    #     parts = name.split('_')
+    #     obj_id = int(parts[-3])
+    #     if obj_id > 2:
+    #         test_names.append(name)
+    #     else:
+    #         train_names.append(name)
+    # for name in table_names:   
+    #     parts = name.split('_')
+    #     if parts[-1].isdigit() and int(parts[-1]) > 2:
+    #         table_test_names.append(name)
+    #     else:
+    #         table_train_names.append(name)
     
-    task_names = libero_task_map[args.libero_task]
-    count = 0
-    for task_name in task_names:
-        if "noise" in task_name:
-            continue
-        print(count)
-        if (test_count % 10 == 0) or (test_count % 9 == 0) or (test_count % 8 == 0) or (test_count % 7 == 0):
-            train_set = False
-        else:
-            train_set = True
-        test_count += 1
+    # task_names = libero_task_map[args.libero_task]
+    # count = 0
+    # for task_name in task_names:
+    #     if "noise" in task_name:
+    #         continue
+    #     print(count)
+    #     if (test_count % 10 == 0) or (test_count % 9 == 0) or (test_count % 8 == 0) or (test_count % 7 == 0):
+    #         train_set = False
+    #     else:
+    #         train_set = True
+    #     test_count += 1
 
-        random_int = random.randint(1, 3)
-        if random_int == 1:
-            motion_type = "static"
-            obj_num = 1
-        elif random_int == 2:
-            motion_type = "dynamic"
-            obj_num = 1
-        else:
-            motion_type = "table"
-            obj_num = 1
-        ori_task_name = task_name
-        if "_view_" in str(task_name) and "_initstate_" in str(task_name):
-            try:
-                ori_task_name, angle_view_initstate = task_name.split("_view_")
-            except:
-                task_name_str = str(task_name)
-                ori_task_name, angle_view_initstate = task_name_str.split("_view_")
+    #     random_int = random.randint(1, 3)
+    #     if random_int == 1:
+    #         motion_type = "static"
+    #         obj_num = 1
+    #     elif random_int == 2:
+    #         motion_type = "dynamic"
+    #         obj_num = 1
+    #     else:
+    #         motion_type = "table"
+    #         obj_num = 1
+    #     ori_task_name = task_name
+    #     if "_view_" in str(task_name) and "_initstate_" in str(task_name):
+    #         try:
+    #             ori_task_name, angle_view_initstate = task_name.split("_view_")
+    #         except:
+    #             task_name_str = str(task_name)
+    #             ori_task_name, angle_view_initstate = task_name_str.split("_view_")
 
-        in_path = os.path.join(get_libero_path("bddl_files"), args.libero_task, ori_task_name + ".bddl")
-        if not in_path or not os.path.isfile(in_path):
-            print("File not found or not specified:", in_path, file=sys.stderr)
-            import pdb; pdb.set_trace()
-        with open(in_path, "r", encoding="utf-8") as f:
-            bddl_src = f.read()
+    #     in_path = os.path.join(get_libero_path("bddl_files"), args.libero_task, ori_task_name + ".bddl")
+    #     if not in_path or not os.path.isfile(in_path):
+    #         print("File not found or not specified:", in_path, file=sys.stderr)
+    #         import pdb; pdb.set_trace()
+    #     with open(in_path, "r", encoding="utf-8") as f:
+    #         bddl_src = f.read()
 
-        for i in range(obj_num):
-            quat_x, quat_y, quat_z, quat_w = random_quaternion_xyzw()
-            if train_set:
-                selected_name = np.random.choice(train_names)
-            else:
-                selected_name = np.random.choice(test_names)
-            if 'open_the_middle_drawer_of_the_cabinet' in task_name:
-                x_min = 0.12
-                x_max = 0.14
-                y_min = 0.20
-                y_max = 0.22
-            elif 'open_the_top_drawer_and_put_the_bowl_inside' in task_name:
-                x_min = 0.13
-                x_max = 0.15
-                y_min = 0.16
-                y_max = 0.18
-            elif 'put_the_bowl_on_the_plate' in task_name: # 1
-                x_min = 0.05 
-                x_max = 0.07
-                y_min = 0.18
-                y_max = 0.2  
-            elif 'put_the_bowl_on_the_stove' in task_name:
-                x_min = -0.08
-                x_max = -0.06
-                y_min = 0.14
-                y_max = 0.18
-            elif 'put_the_bowl_on_top_of_the_cabinet' in task_name: # 1
-                x_min = -0.02 
-                x_max = 0.0
-                y_min = -0.3 
-                y_max = -0.28  
+    #     for i in range(obj_num):
+    #         quat_x, quat_y, quat_z, quat_w = random_quaternion_xyzw()
+    #         if train_set:
+    #             selected_name = np.random.choice(train_names)
+    #         else:
+    #             selected_name = np.random.choice(test_names)
+    #         if 'open_the_middle_drawer_of_the_cabinet' in task_name:
+    #             x_min = 0.12
+    #             x_max = 0.14
+    #             y_min = 0.20
+    #             y_max = 0.22
+    #         elif 'open_the_top_drawer_and_put_the_bowl_inside' in task_name:
+    #             x_min = 0.13
+    #             x_max = 0.15
+    #             y_min = 0.16
+    #             y_max = 0.18
+    #         elif 'put_the_bowl_on_the_plate' in task_name: # 1
+    #             x_min = 0.05 
+    #             x_max = 0.07
+    #             y_min = 0.18
+    #             y_max = 0.2  
+    #         elif 'put_the_bowl_on_the_stove' in task_name:
+    #             x_min = -0.08
+    #             x_max = -0.06
+    #             y_min = 0.14
+    #             y_max = 0.18
+    #         elif 'put_the_bowl_on_top_of_the_cabinet' in task_name: # 1
+    #             x_min = -0.02 
+    #             x_max = 0.0
+    #             y_min = -0.3 
+    #             y_max = -0.28  
 
-            elif 'put_the_cream_cheese_in_the_bowl' in task_name: # 1
-                x_min = -0.04 
-                x_max = -0.02
-                y_min = 0.22 
-                y_max = 0.24  
-            elif 'put_the_wine_bottle_on_the_rack' in task_name: # 不要桌面
-                x_min = -0.21 
-                x_max = -0.19
-                y_min = 0.24 
-                y_max = 0.26  
-                random_int = random.randint(1, 2)
-                if random_int == 1:
-                    motion_type = "static"
-                    obj_num = 1
-                else:
-                    motion_type = "dynamic"
-                    obj_num = 1
-            elif 'put_the_wine_bottle_on_top_of_the_cabinet' in task_name: # 1
-                x_min = -0.02  
-                x_max = 0.0
-                y_min = -0.3 
-                y_max = -0.28  
-            elif "turn_on_the_stove" in task_name: # 不要桌面
-                x_min = -0.24 
-                x_max = -0.22
-                y_min = 0.2 
-                y_max = 0.22  
-                random_int = random.randint(1, 2)
-                if random_int == 1:
-                    motion_type = "static"
-                    obj_num = 1
-                else:
-                    motion_type = "dynamic"
-                    obj_num = 1
-            elif "push_the_plate_to_the_front_of_the_stove" in task_name: # z要小
-                x_min = 0.03 
-                x_max = 0.05
-                y_min = 0.27
-                y_max = 0.29
+    #         elif 'put_the_cream_cheese_in_the_bowl' in task_name: # 1
+    #             x_min = -0.04 
+    #             x_max = -0.02
+    #             y_min = 0.22 
+    #             y_max = 0.24  
+    #         elif 'put_the_wine_bottle_on_the_rack' in task_name: # 不要桌面
+    #             x_min = -0.21 
+    #             x_max = -0.19
+    #             y_min = 0.24 
+    #             y_max = 0.26  
+    #             random_int = random.randint(1, 2)
+    #             if random_int == 1:
+    #                 motion_type = "static"
+    #                 obj_num = 1
+    #             else:
+    #                 motion_type = "dynamic"
+    #                 obj_num = 1
+    #         elif 'put_the_wine_bottle_on_top_of_the_cabinet' in task_name: # 1
+    #             x_min = -0.02  
+    #             x_max = 0.0
+    #             y_min = -0.3 
+    #             y_max = -0.28  
+    #         elif "turn_on_the_stove" in task_name: # 不要桌面
+    #             x_min = -0.24 
+    #             x_max = -0.22
+    #             y_min = 0.2 
+    #             y_max = 0.22  
+    #             random_int = random.randint(1, 2)
+    #             if random_int == 1:
+    #                 motion_type = "static"
+    #                 obj_num = 1
+    #             else:
+    #                 motion_type = "dynamic"
+    #                 obj_num = 1
+    #         elif "push_the_plate_to_the_front_of_the_stove" in task_name: # z要小
+    #             x_min = 0.03 
+    #             x_max = 0.05
+    #             y_min = 0.27
+    #             y_max = 0.29
 
-            z_min = 0.38
-            z_max = 0.4
-            if "push_the_plate_to_the_front_of_the_stove" in task_name:
-                z_min = 0.32
-                z_max = 0.34
-            if motion_type == "static":
-                # x_true = random.uniform(x_min, x_max)
-                # y_true = random.uniform(y_min, y_max)
-                # z_true = random.uniform(0.26, 0.3)
+    #         z_min = 0.38
+    #         z_max = 0.4
+    #         if "push_the_plate_to_the_front_of_the_stove" in task_name:
+    #             z_min = 0.32
+    #             z_max = 0.34
+    #         if motion_type == "static":
+    #             # x_true = random.uniform(x_min, x_max)
+    #             # y_true = random.uniform(y_min, y_max)
+    #             # z_true = random.uniform(0.26, 0.3)
                 
-                # y = random.uniform(-0.2, 0.2)
-                # y_min = max(-0.25, y - 0.01)
-                # y_max = min(0.25, y + 0.01)
-                # x = random.uniform(-0.2, 0.2)
-                # if -0.06 < y < 0.06:
-                #     x = random.uniform(0.15, 0.2)
-                # x_min = max(-0.25, x - 0.01)
-                # x_max = min(0.25, x + 0.01)
-                if obj_num == 1:
-                    dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":z_min,"z_max":z_max, "quat_x": quat_x, "quat_y": quat_y, "quat_z": quat_z, "quat_w": quat_w}
-                # else:
-                #     if i == 0:
-                #         dyn_overrides = {"x_min":-0.3,"x_max":0.0,"y_min":-0.3,"y_max":0.0,"z_min":0.23,"z_max":0.3}
-                #     else:
-                #         dyn_overrides = {"x_min":0.0,"x_max":0.3,"y_min":0.0,"y_max":0.3,"z_min":0.23,"z_max":0.3}
-                dyn_template = "static"
-                new_text, ok = insert_objects_and_dynamics(bddl_src, selected_name, 1,
-                                                    dyn_template_id=dyn_template,
-                                                    dyn_overrides=dyn_overrides)
-            elif motion_type == "dynamic":
-                # random_int = random.randint(1, 2)
-                # if random_int == 1:
+    #             # y = random.uniform(-0.2, 0.2)
+    #             # y_min = max(-0.25, y - 0.01)
+    #             # y_max = min(0.25, y + 0.01)
+    #             # x = random.uniform(-0.2, 0.2)
+    #             # if -0.06 < y < 0.06:
+    #             #     x = random.uniform(0.15, 0.2)
+    #             # x_min = max(-0.25, x - 0.01)
+    #             # x_max = min(0.25, x + 0.01)
+    #             if obj_num == 1:
+    #                 dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":z_min,"z_max":z_max, "quat_x": quat_x, "quat_y": quat_y, "quat_z": quat_z, "quat_w": quat_w}
+    #             # else:
+    #             #     if i == 0:
+    #             #         dyn_overrides = {"x_min":-0.3,"x_max":0.0,"y_min":-0.3,"y_max":0.0,"z_min":0.23,"z_max":0.3}
+    #             #     else:
+    #             #         dyn_overrides = {"x_min":0.0,"x_max":0.3,"y_min":0.0,"y_max":0.3,"z_min":0.23,"z_max":0.3}
+    #             dyn_template = "static"
+    #             new_text, ok = insert_objects_and_dynamics(bddl_src, selected_name, 1,
+    #                                                 dyn_template_id=dyn_template,
+    #                                                 dyn_overrides=dyn_overrides)
+    #         elif motion_type == "dynamic":
+    #             # random_int = random.randint(1, 2)
+    #             # if random_int == 1:
                 
-                dyn_template = "linear"
-                target_x = (x_max + x_min) * 0.5
-                target_y = (y_max + y_min) * 0.5
-                y = random.uniform(-0.25, 0.0)
-                y_min = max(-0.25, y - 0.01)
-                y_max = min(0.1, y + 0.01)
-                x = random.uniform(0.27, 0.3)
-                # if -0.06 < y < 0.06:
-                #     x = random.uniform(0.15, 0.2)
-                x_min = max(-0.25, x - 0.01)
-                x_max = min(0.35, x + 0.01)
-                target_dir = np.array([target_x - x, target_y - y])
-                target_norm = target_dir / np.linalg.norm(target_dir)
-                vel = random.uniform(0.1, 0.15)
-                v_x = target_norm[0] * vel
-                v_y = target_norm[1] * vel
-                v_z = random.uniform(0.0, 0.01)
-                dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":z_min,"z_max":z_max,"v_x_min":v_x,"v_x_max":v_x,"v_y_min":v_y,"v_y_max":v_y,"v_z_min":v_z,"v_z_max":v_z, "quat_x": quat_x, "quat_y": quat_y, "quat_z": quat_z, "quat_w": quat_w}
-                # if obj_num == 1:
-                #     if -0.1 < y < 0.1:
-                #         dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":0.26,"z_max":0.3,"v_x_min":v_x,"v_x_max":v_x,"v_y_min":v_y,"v_y_max":v_y,"v_z_min":v_z,"v_z_max":v_z, "quat_w":0.0, "quat_x":0.0, "quat_y":0.0, "quat_z":1.0}
-                #     else:
+    #             dyn_template = "linear"
+    #             target_x = (x_max + x_min) * 0.5
+    #             target_y = (y_max + y_min) * 0.5
+    #             y = random.uniform(-0.25, 0.0)
+    #             y_min = max(-0.25, y - 0.01)
+    #             y_max = min(0.1, y + 0.01)
+    #             x = random.uniform(0.27, 0.3)
+    #             # if -0.06 < y < 0.06:
+    #             #     x = random.uniform(0.15, 0.2)
+    #             x_min = max(-0.25, x - 0.01)
+    #             x_max = min(0.35, x + 0.01)
+    #             target_dir = np.array([target_x - x, target_y - y])
+    #             target_norm = target_dir / np.linalg.norm(target_dir)
+    #             vel = random.uniform(0.1, 0.15)
+    #             v_x = target_norm[0] * vel
+    #             v_y = target_norm[1] * vel
+    #             v_z = random.uniform(0.0, 0.01)
+    #             dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":z_min,"z_max":z_max,"v_x_min":v_x,"v_x_max":v_x,"v_y_min":v_y,"v_y_max":v_y,"v_z_min":v_z,"v_z_max":v_z, "quat_x": quat_x, "quat_y": quat_y, "quat_z": quat_z, "quat_w": quat_w}
+    #             # if obj_num == 1:
+    #             #     if -0.1 < y < 0.1:
+    #             #         dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":0.26,"z_max":0.3,"v_x_min":v_x,"v_x_max":v_x,"v_y_min":v_y,"v_y_max":v_y,"v_z_min":v_z,"v_z_max":v_z, "quat_w":0.0, "quat_x":0.0, "quat_y":0.0, "quat_z":1.0}
+    #             #     else:
                         
-                # else:
-                #     interval = random.choice([(-0.2, -0.1), (0.1, 0.2)])
-                #     omega = random.choice([(-0.2, -0.1), (0.1, 0.2)])
-                #     y = random.uniform(interval[0], interval[1])
-                #     y_min = max(-0.25, y - 0.01)
-                #     y_max = min(0.25, y + 0.01)
-                #     x = random.uniform(0.2, 0.3)
-                #     x_min = max(-0.3, x - 0.01)
-                #     x_max = min(0.3, x + 0.01)
-                #     dyn_template = "circle"
-                #     if obj_num == 1:
-                #         dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":0.26,"z_max":0.3,"radius_min": 0.15, "radius_max": 0.25, "omega_min": omega[0],"omega_max": omega[1]}
+    #             # else:
+    #             #     interval = random.choice([(-0.2, -0.1), (0.1, 0.2)])
+    #             #     omega = random.choice([(-0.2, -0.1), (0.1, 0.2)])
+    #             #     y = random.uniform(interval[0], interval[1])
+    #             #     y_min = max(-0.25, y - 0.01)
+    #             #     y_max = min(0.25, y + 0.01)
+    #             #     x = random.uniform(0.2, 0.3)
+    #             #     x_min = max(-0.3, x - 0.01)
+    #             #     x_max = min(0.3, x + 0.01)
+    #             #     dyn_template = "circle"
+    #             #     if obj_num == 1:
+    #             #         dyn_overrides = {"x_min":x_min,"x_max":x_max,"y_min":y_min,"y_max":y_max,"z_min":0.26,"z_max":0.3,"radius_min": 0.15, "radius_max": 0.25, "omega_min": omega[0],"omega_max": omega[1]}
                     
             
-                new_text, ok = insert_objects_and_dynamics(bddl_src, selected_name, 1,
-                                                    dyn_template_id=dyn_template,
-                                                    dyn_overrides=dyn_overrides)
-            elif motion_type == "table":
-                # if 'open_the_middle_drawer_of_the_cabinet' in task_name:
-                #     x_min = 0.12
-                #     x_max = 0.14
-                #     y_min = 0.2
-                #     y_max = 0.22
-                # bottle_train_names = [name for name in table_train_names if "bottle" in name]
-                # bottle_test_names = [name for name in table_test_names if "bottle" in name]
-                if train_set:
-                    selected_name = np.random.choice(table_train_names)
-                else:
-                    selected_name = np.random.choice(table_test_names)
-                new_text, ok = add_fixed_object_to_problem_file(bddl_src, 'white_place_box', ranges=[x_min, y_min, x_max, y_max], is_fixed=True)
-                new_text, ok = add_place_object_to_problem_file(new_text, selected_name)
+    #             new_text, ok = insert_objects_and_dynamics(bddl_src, selected_name, 1,
+    #                                                 dyn_template_id=dyn_template,
+    #                                                 dyn_overrides=dyn_overrides)
+    #         elif motion_type == "table":
+    #             # if 'open_the_middle_drawer_of_the_cabinet' in task_name:
+    #             #     x_min = 0.12
+    #             #     x_max = 0.14
+    #             #     y_min = 0.2
+    #             #     y_max = 0.22
+    #             # bottle_train_names = [name for name in table_train_names if "bottle" in name]
+    #             # bottle_test_names = [name for name in table_test_names if "bottle" in name]
+    #             if train_set:
+    #                 selected_name = np.random.choice(table_train_names)
+    #             else:
+    #                 selected_name = np.random.choice(table_test_names)
+    #             new_text, ok = add_fixed_object_to_problem_file(bddl_src, 'white_place_box', ranges=[x_min, y_min, x_max, y_max], is_fixed=True)
+    #             new_text, ok = add_place_object_to_problem_file(new_text, selected_name)
             
-            new_text = insert_obstacle_in_file(new_text, obstacles=[selected_name])
-            bddl_src = new_text
+    #         new_text = insert_obstacle_in_file(new_text, obstacles=[selected_name])
+    #         bddl_src = new_text
 
 
-            if not ok:
-                print("No changes made.", file=sys.stderr)
-                sys.exit(1)
+    #         if not ok:
+    #             print("No changes made.", file=sys.stderr)
+    #             sys.exit(1)
 
-        if args.backup:
-            bak = in_path + ".bak"
-            shutil.copyfile(in_path, bak)
-            print("Backup created:", bak)
+    #     if args.backup:
+    #         bak = in_path + ".bak"
+    #         shutil.copyfile(in_path, bak)
+    #         print("Backup created:", bak)
         
-        suffix = f"{motion_type}"
-        out_dir = os.path.dirname(in_path) + '_obs'
-        if train_set:
-            out_dir = out_dir + '_train'
-        out_path = os.path.join(out_dir, task_name + f'_{suffix}.bddl')
-        os.makedirs(os.path.dirname(out_path), exist_ok=True)
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(bddl_src)
-        print("Wrote modified file to", out_path)
-        append_unique(os.path.join(out_dir, 'tasks_info.txt'), "\"" + task_name + f'_{suffix}.bddl' + "\"" + ",")
+    #     suffix = f"{motion_type}"
+    #     out_dir = os.path.dirname(in_path) + '_obs'
+    #     if train_set:
+    #         out_dir = out_dir + '_train'
+    #     out_path = os.path.join(out_dir, task_name + f'_{suffix}.bddl')
+    #     os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    #     with open(out_path, "w", encoding="utf-8") as f:
+    #         f.write(bddl_src)
+    #     print("Wrote modified file to", out_path)
+    #     append_unique(os.path.join(out_dir, 'tasks_info.txt'), "\"" + task_name + f'_{suffix}.bddl' + "\"" + ",")
         
-        count += 1
-        # break
+    #     count += 1
+    #     # break
     # # test
     # env_args = {
     #     "bddl_file_name": out_path,

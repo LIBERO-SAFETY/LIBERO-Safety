@@ -915,9 +915,9 @@ def extract_trailing_int(s):
 class SceneRandomizer:
     def __init__(self, 
                  workspace_name,
-                 enable_image_noise=True,
-                 enable_init_state=True,
-                 enable_view_random=True,
+                 enable_image_noise=False,
+                 enable_init_state=False,
+                 enable_view_random=False,
                  enable_random_scene=True,
                  robot_init_id=[0, 500],
                  vertical_view=[-3, 3],
@@ -1040,6 +1040,8 @@ class SceneRandomizer:
             else:
                 noise_severity = random.randint(self.noise_severity[0], self.noise_severity[1])
                 noise = {noise_type: noise_severity}
+        else:
+            noise = {}
         
         return (xml, scene_properties, robot_init_id, vertical_view, horizon_view, scale_factor,
                 end_point_vertical, end_point_rot, noise)

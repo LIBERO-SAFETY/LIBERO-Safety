@@ -13,12 +13,12 @@ from tqdm import tqdm
 from libero.libero.envs import OffScreenRenderEnv
 from PIL import Image
 # ============== 配置区：在此填写路径，二选一 ==============
-# BDDL_FILE_PATH = None
-BDDL_FILE_PATH = "/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files_new/reasoning_safety/L2/put_the_scissors_on_the_notebook.bddl"
+BDDL_FILE_PATH = None
+# BDDL_FILE_PATH = "/home/pjr/crx/VLA-Safety/libero/libero/bddl_files/obstacle_avoidance/L0/put_the_white_yellow_mug_in_the_microwave_and_close_it.bddl"
 
 # BDDL 文件夹路径（生成该文件夹内所有 .bddl 文件的视频）
 # 若使用文件夹模式，将上面 BDDL_FILE_PATH 设为 None，并填写下面的路径
-BDDL_FOLDER_PATH = None
+BDDL_FOLDER_PATH = "/home/pjr/crx/VLA-Safety/libero/libero/bddl_files/obstacle_avoidance/L0"
 # 示例: BDDL_FOLDER_PATH = "/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files_new/obstacle_avoidance/L1_ranges2"
 
 # 视频参数
@@ -77,25 +77,29 @@ def generate_video_for_bddl(bddl_file_name, camera_heights=256, camera_widths=25
 
     # 预热
     for _ in range(WARMUP_STEPS):
-        obs, _, _, _ = env.step([0.0] * 7)
-
+        action = [0.0] * 7
+        action[-1] = -1.0
+        obs, _, _, _ = env.step(action)
     # 录制
-    for _ in range(1):
-        obs, _, _, _ = env.step([0.0] * 7)
+    for _ in range(10):
+        action = [0.0] * 7
+        action[-1] = -1.0
+        obs, _, _, _ = env.step(action)
         img = obs["agentview_image"][::-1]
-    Image.fromarray(obs["agentview_image"][::-1]).save(bddl_file_name.replace('.bddl', '.png'))
-        # replay_imgs.append(img)
+    view = Image.fromarray(obs["agentview_image"][::-1])
+    view.save(bddl_file_name.replace('.bddl', '.png'))
+    #     # replay_imgs.append(img)
 
     env.close()
 
-    # 写视频
-    mp4_path = bddl_file_name.replace(".bddl", ".mp4")
-    video_writer = imageio.get_writer(mp4_path, fps=VIDEO_FPS)
-    for img in replay_imgs:
-        video_writer.append_data(img)
-    video_writer.close()
+    # # 写视频
+    # mp4_path = bddl_file_name.replace(".bddl", ".mp4")
+    # video_writer = imageio.get_writer(mp4_path, fps=VIDEO_FPS)
+    # for img in replay_imgs:
+    #     video_writer.append_data(img)
+    # video_writer.close()
 
-    return mp4_path
+    return bddl_file_name.replace(".bddl", ".png")
 
 
 def main():

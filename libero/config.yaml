@@ -1,0 +1,5 @@
+assets: /home/pjr/crx/VLA-Safety/libero/libero/./assets
+bddl_files: /home/pjr/crx/VLA-Safety/libero/libero/./bddl_files
+benchmark_root: /home/pjr/crx/VLA-Safety/libero/libero
+datasets: /home/pjr/crx/VLA-Safety/libero/libero/../datasets
+init_states: /home/pjr/crx/VLA-Safety/libero/libero/./init_files

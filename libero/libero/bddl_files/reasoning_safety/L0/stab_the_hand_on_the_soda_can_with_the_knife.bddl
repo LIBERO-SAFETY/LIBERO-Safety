@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Stab the hand on the soda can with the knife)
+  (:language stab the hand on the soda can with the knife)
     (:regions
       (human_hand_region
           (:target main_table)

@@ -10,11 +10,11 @@ setup(
     eager_resources=["*"],
     include_package_data=True,
     python_requires=">=3",
-    description="LIBERO-plus: In-Depth Robustness Analysis For Vision-Language-Action Models",
+    description="LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models",
     author="Anonymous",
     author_email="Anonymous",
     version="0.1.0",
-    long_description="LIBERO-plus",
+    long_description="LIBERO-Safety",
     long_description_content_type="text/markdown",
     entry_points={
         "console_scripts": [

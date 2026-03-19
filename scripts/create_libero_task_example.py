@@ -101,7 +101,7 @@ def main():
     #         ("In", "akita_black_bowl_1", "wooden_cabinet_1_bottom_region"),
     #     ],
     # )
-    bddl_file_names, failures = generate_bddl_from_task_info(folder='/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/temp')
+    bddl_file_names, failures = generate_bddl_from_task_info(folder='/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/temp')
     print(bddl_file_names)
 
 

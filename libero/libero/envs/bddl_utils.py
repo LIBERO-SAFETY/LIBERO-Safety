@@ -185,7 +185,7 @@ def robosuite_parse_problem(problem_filename):
         obj_of_interest = []
         initial_state = []
         goal_state = []
-        constraint = []
+        constraints = []
         dynamic_objects = {}
         cam_view = {}
         fixtures = {}
@@ -266,8 +266,8 @@ def robosuite_parse_problem(problem_filename):
             elif t == ":scene_xml":
                 group.pop(0)
                 scene_xml = group[0]
-            elif t == ":constraint":
-                package_predicates(group[1], constraint, '', 'constraints')
+            elif t == ":constraints":
+                package_predicates(group[1], constraints, '', 'constraints')
             else:
                 print("%s is not recognized in problem" % t)
         return {
@@ -286,7 +286,7 @@ def robosuite_parse_problem(problem_filename):
             "noise": noise,
             "cam_view": cam_view,
             "robot_init_state": robot_init_state,
-            "constraint": constraint,
+            "constraints": constraints,
         }
     else:
         raise Exception(

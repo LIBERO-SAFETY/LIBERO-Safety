@@ -130,10 +130,11 @@ class ObjectState(BaseObjectState):
         return (
             (this_object_position[2] <= other_object_position[2])
             and self.check_contact(other)
-            and (
-                np.linalg.norm(this_object_position[:2] - other_object_position[:2])
-                < 0.03
-            )
+            # crx 0218
+            # and (
+            #     np.linalg.norm(this_object_position[:2] - other_object_position[:2])
+            #     < 0.03
+            # )
         )
 
     def set_joint(self, qpos=1.5):
@@ -233,6 +234,14 @@ class ObjectState(BaseObjectState):
     def check_gripper_contact(self):
         object_1 = self.env.get_object(self.object_name)
         return self.env.check_gripper_contact(object_1)
+
+    def check_gripper_force(self):
+        object_1 = self.env.get_object(self.object_name)
+        return self.env.check_gripper_force(object_1)
+
+    def check_robot_contact(self):
+        object_1 = self.env.get_object(self.object_name)
+        return self.env.check_robot_contact(object_1)
 
 
     def check_in_contact_part(self, object_name, geom_name_1, geom_name_2):

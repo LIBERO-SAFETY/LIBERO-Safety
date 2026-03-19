@@ -7,8 +7,10 @@ import re
 
 from typing import List, NamedTuple, Type
 from libero.libero import get_libero_path
-from libero.libero.benchmark.libero_suite_task_map import libero_task_map
 import libero.libero.envs.bddl_utils as BDDLUtils
+from libero.libero.benchmark.vla_safety_task_map import (
+    vla_safety_task_map,
+)
 
 BENCHMARK_MAPPING = {}
 
@@ -41,78 +43,93 @@ class Task(NamedTuple):
     problem_folder: str
     bddl_file: str
     init_states_file: str
+    level: int
+    level_id: int
 
 
-def grab_language_from_filename(suite_name, x):
-    if "_language_" not in x:
-        if x[0].isupper():  # LIBERO-100
-            if "SCENE10" in x:
-                language = " ".join(x[x.find("SCENE") + 8 :].split("_"))
-            else:
-                language = " ".join(x[x.find("SCENE") + 7 :].split("_"))
+def grab_language_from_filename(x):
+    if x[0].isupper():  # LIBERO-100
+        if "SCENE10" in x:
+            language = " ".join(x[x.find("SCENE") + 8 :].split("_"))
+        elif "HUMAN" in x:
+            language = " ".join(x[x.find("HUMAN") + 6 :].split("_"))
         else:
-            language = " ".join(x.split("_"))
-        en = language.find(".bddl")
-        return language[:en]
+            language = " ".join(x[x.find("SCENE") + 7 :].split("_"))
     else:
-        if "_view_" in x and "_obs" not in suite_name:
-            bddl_file_path = os.path.join(
-                get_libero_path("bddl_files"),
-                suite_name,
-                x.split("_view_")[0]+'.bddl',
-            )
-        else:
-            bddl_file_path = os.path.join(
-                get_libero_path("bddl_files"),
-                suite_name,
-                x,
-            )
-        if os.path.exists(bddl_file_path):
-        # print("bddl_file_path:", bddl_file_path)
-            problem_info = BDDLUtils.get_problem_info(bddl_file_path)
-        else:
-            import pdb; pdb.set_trace()
-        return problem_info["language_instruction"]
+        language = " ".join(x.split("_"))
+    en = language.find(".bddl")
+    return language[:en]
 
 
-libero_suites = [
-    "libero_spatial",
-    "libero_object",
-    "libero_goal",
-    "libero_90",
-    "libero_10",
+vla_safety_suites = [
+    # Safety benchmarks
+    'human_safety',
+    'obstacle_avoidance',
+    'obstacle_avoidance_human',
+    'affordance',
+    'reasoning_safety',
+    # Libero benchmarks
+    'libero_10',
+    'libero_90',
+    'libero_spatial',
+    'libero_object',
+    'libero_goal',
 ]
 
 task_maps = {}
 max_len = 0
-for libero_suite in libero_suites:
-    task_maps[libero_suite] = {}
+for vla_safety_suite in vla_safety_suites:
+    task_maps[vla_safety_suite] = {0: {}, 1: {}, 2: {}}
 
-    for task in libero_task_map[libero_suite]:
-        language = grab_language_from_filename(libero_suite, task + ".bddl")
-        task_maps[libero_suite][task] = Task(
-            name=task,
-            language=language,
-            problem="Libero",
-            problem_folder=libero_suite,
-            bddl_file=f"{task}.bddl",
-            init_states_file=f"{task}.pruned_init",
-        )
+    # Build task maps using the level-based structure from vla_arena_task_map
+    for level in [0, 1, 2]:
+        if level in vla_safety_task_map[vla_safety_suite]:
+            level_tasks = vla_safety_task_map[vla_safety_suite][level]
 
-        # print(language, "\n", f"{task}.bddl", "\n")
-        # print("")
+            for level_id, task in enumerate(level_tasks):
 
-suite_order = ["libero_spatial", "libero_object", "libero_goal", "libero_10", "libero_90", "libero_object_obs", "libero_goal_obs", "libero_spatial_obs", "libero_10_obs"]
-task_num = [2402, 2518, 2591, 2519, 90, 818, 864, 802, 810]
-task_order_dict = dict()
+                # Determine the actual problem folder name
+                problem_folder = vla_safety_suite
+                level_dir = f'L{level}'
 
-for idx in range(9):
-    task_orders = [list(range(0,task_num[idx]))]
-    for _ in range(19):
-        order = list(range(0,task_num[idx]))
-        random.shuffle(order)
-        task_orders.append(order)
-    task_order_dict[suite_order[idx]] = task_orders
+                # Get language (removing level suffix for processing)
+                language = grab_language_from_filename(task + '.bddl')
+
+                bddl_filename = f'{task}.bddl'
+                init_states_filename = f'{task}.pruned_init'
+                task_maps[vla_safety_suite][level][task] = Task(
+                    name=task,
+                    language=language,
+                    problem='vla_safety',
+                    problem_folder=problem_folder,
+                    bddl_file=bddl_filename,
+                    init_states_file=init_states_filename,
+                    level=level,
+                    level_id=level_id,
+                )
+
+
+def get_all_tasks_for_suite(suite_name):
+    """Get all tasks for a suite, combining all levels."""
+    if suite_name not in vla_safety_task_map:
+        return []
+
+    all_tasks = []
+    for level in [0, 1, 2]:
+        if level in vla_safety_task_map[suite_name]:
+            all_tasks.extend(vla_safety_task_map[suite_name][level])
+    return all_tasks
+
+def get_tasks_by_level(suite_name, level):
+    """Get tasks for a specific suite and level."""
+    if suite_name not in vla_safety_task_map:
+        return []
+
+    if level not in vla_safety_task_map[suite_name]:
+        return []
+
+    return vla_safety_task_map[suite_name][level]
+
 
 class Benchmark(abc.ABC):
     """A Benchmark."""
@@ -120,11 +137,23 @@ class Benchmark(abc.ABC):
     def __init__(self, task_order_index=0):
         self.task_embs = None
         self.task_order_index = task_order_index
+        self.level_task_maps = {}
+
 
     def _make_benchmark(self):
-        tasks = list(task_maps[self.name].values())
-        print(f"[info] using task orders {task_order_dict[self.name][self.task_order_index]}")
-        self.tasks = [tasks[i] for i in task_order_dict[self.name][self.task_order_index]]
+        self.level_task_maps = {0: [], 1: [], 2: []}
+        for level in [0, 1, 2]:
+            if level in vla_safety_task_map[self.name]:
+                level_tasks = vla_safety_task_map[self.name][level]
+                for task_name in level_tasks:
+                    if task_name in task_maps[self.name][level]:
+                        self.level_task_maps[level].append(
+                            task_maps[self.name][level][task_name]
+                        )
+        self.tasks = [task 
+                        for level_dict in task_maps[self.name].values() 
+                        for task in level_dict.values()
+                    ]
         self.n_tasks = len(self.tasks)
 
     def get_num_tasks(self):
@@ -139,208 +168,216 @@ class Benchmark(abc.ABC):
     def get_task_bddl_files(self):
         return [task.bddl_file for task in self.tasks]
 
-    def get_task_bddl_file_path(self, i):
-        bddl_file_path = os.path.join(
-            get_libero_path("bddl_files"),
-            self.tasks[i].problem_folder,
-            self.tasks[i].bddl_file,
+    
+    def get_task_by_level_id(self, level: int, level_id: int) -> Task | None:
+        """
+        Get task by level and level_id.
+
+        Args:
+            level: The difficulty level (0, 1, or 2)
+            level_id: The index within that level (0-based)
+
+        Returns:
+            Task object or None if not found
+        """
+        if level not in [0, 1, 2]:
+            raise ValueError(f'Level must be 0, 1, or 2, got {level}')
+
+        if level not in self.level_task_maps:
+            return None
+
+        level_tasks = self.level_task_maps[level]
+        if 0 <= level_id < len(level_tasks):
+            return level_tasks[level_id]
+        return None
+
+    def _get_task_file_path(
+        self,
+        level: int,
+        level_id: int,
+        file_type: str,
+        file_extension: str,
+    ) -> str | None:
+        """
+        Generic method to get file paths by level and level_id.
+
+        Args:
+            level: The difficulty level (0, 1, or 2)
+            level_id: The index within that level (0-based)
+            file_type: Type of file ("bddl_files", "init_states", etc.)
+            file_extension: File extension (".bddl", ".pruned_init", etc.)
+        """
+        task = self.get_task_by_level_id(level, level_id)
+        if task is None:
+            return None
+
+        level_dir = f'L{task.level}'
+
+        if file_type == 'bddl_files':
+            filename = task.bddl_file
+        elif file_type == 'init_states':
+            filename = task.init_states_file
+        else:
+            return None
+
+        file_path = os.path.join(
+            get_libero_path(file_type),
+            task.problem_folder,
+            level_dir,
+            filename,
         )
-        return bddl_file_path
+        return file_path
+
+    def get_task_bddl_file_path_by_level_id(
+        self, level: int, level_id: int
+    ) -> str | None:
+        """Get the bddl file path by level and level_id."""
+        return self._get_task_file_path(level, level_id, 'bddl_files', '.bddl')
+
+    def get_task_init_states_by_level_id(self, level: int, level_id: int):
+        """Get init states by level and level_id."""
+        init_states_path = self._get_task_file_path(
+            level, level_id, 'init_states', '.pruned_init'
+        )
+        if init_states_path is None:
+            return None
+        return torch.load(init_states_path, weights_only=False)
+
+    # crx 0201
+    def get_task_demonstration_by_level_id(
+        self, level: int, level_id: int
+    ) -> str | None:
+        """Get demonstration path by level and level_id."""
+        task = self.get_task_by_level_id(level, level_id)
+        if task is None:
+            return None
+
+        # Extract base task name without level suffix for demo file
+        base_task_name = re.sub(r'_L[0-2]$', '', task.name)
+        level_dir = f'L{task.level}'
+        demo_path = (
+            f'{task.problem_folder}/{level_dir}/{base_task_name}_demo.hdf5'
+        )
+        return demo_path
+
+    def get_num_tasks_by_level(self, level: int) -> int:
+        """Get the number of tasks for a specific level."""
+        if level not in [0, 1, 2]:
+            raise ValueError(f'Level must be 0, 1, or 2, got {level}')
+        return len(self.level_task_maps.get(level, []))
+
+    def get_all_tasks_by_level(self, level: int) -> list[Task]:
+        """Get all tasks for a specific level."""
+        if level not in [0, 1, 2]:
+            raise ValueError(f'Level must be 0, 1, or 2, got {level}')
+        return self.level_task_maps.get(level, [])
+    
+    def get_task_bddl_file_path(self, level, i):
+        """Get the bddl file path with level-based directory structure."""
+        return self.get_task_bddl_file_path_by_level_id(level, i)
 
     def get_task_demonstration(self, i):
+        """Get demonstration path by task index."""
         assert (
-            0 <= i and i < self.n_tasks
-        ), f"[error] task number {i} is outer of range {self.n_tasks}"
-        # this path is relative to the datasets folder
-        demo_path = f"{self.tasks[i].problem_folder}/{self.tasks[i].name}_demo.hdf5"
-        return demo_path
+            i >= 0 and i < self.n_tasks
+        ), f'[error] task number {i} is outer of range {self.n_tasks}'
+
+        task = self.tasks[i]
+        return self.get_task_demonstration_by_level_id(
+            task.level, task.level_id
+        )
 
     def get_task(self, i):
         return self.tasks[i]
 
     def get_task_emb(self, i):
         return self.task_embs[i]
-
-    def get_task_init_states_ori(self, i):
-        if "_table_" in self.tasks[i].init_states_file:
-            init_states_path = os.path.join(
-                get_libero_path("init_states"),
-                self.tasks[i].problem_folder,
-                self.tasks[i].init_states_file.split("_table_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-            )
-        elif "_tb_" in self.tasks[i].init_states_file:
-            init_states_path = os.path.join(
-                get_libero_path("init_states"),
-                self.tasks[i].problem_folder,
-                self.tasks[i].init_states_file.split("_tb_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-            )
-        elif "_view_" in self.tasks[i].init_states_file:
-            init_states_path = os.path.join(
-                get_libero_path("init_states"),
-                self.tasks[i].problem_folder,
-                self.tasks[i].init_states_file.split("_view_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-            )
-        else:
-            init_states_path = os.path.join(
-                get_libero_path("init_states"),
-                self.tasks[i].problem_folder,
-                self.tasks[i].init_states_file,
-            )
-
-        init_states = torch.load(init_states_path)
-        return init_states
     
-    def get_task_init_states(self, i):
-        # print("======", re.sub(r'_table_\d+$', '', self.tasks[i].init_states_file))
-        # print("====init_states_path=====", self.tasks[i].init_states_file)
-        if "_language_" in self.tasks[i].init_states_file:
-            init_states_path = os.path.join(
-                get_libero_path("init_states"),
-                self.tasks[i].problem_folder,
-                self.tasks[i].init_states_file.split("_language_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-            )
-        else:
-            if "_view_" in self.tasks[i].init_states_file:
-                init_states_path = os.path.join(
-                    get_libero_path("init_states"),
-                    self.tasks[i].problem_folder,
-                    self.tasks[i].init_states_file.split("_view_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-                )
-            else:
-                if "_table_" in self.tasks[i].init_states_file:
-                    init_states_path = os.path.join(
-                        get_libero_path("init_states"),
-                        self.tasks[i].problem_folder,
-                        re.sub(r'_table_\d+', '', self.tasks[i].init_states_file),
-                    )
-                if "_tb_" in self.tasks[i].init_states_file:
-                    init_states_path = os.path.join(
-                        get_libero_path("init_states"),
-                        self.tasks[i].problem_folder,
-                        re.sub(r'_tb_\d+', '', self.tasks[i].init_states_file),
-                    )
-                
-                if "_light_" in self.tasks[i].init_states_file:
-                    init_states_path = os.path.join(
-                        get_libero_path("init_states"),
-                        self.tasks[i].problem_folder,
-                        self.tasks[i].init_states_file.split("_light_")[0] + "." + self.tasks[i].init_states_file.split(".")[-1],
-                    )
-                
-                if "_add_" in self.tasks[i].init_states_file or "_level" in self.tasks[i].init_states_file:
-                    init_states_path = os.path.join(
-                        get_libero_path("init_states"),
-                        "libero_newobj",
-                        self.tasks[i].problem_folder,
-                        self.tasks[i].init_states_file,
-                    )
-        # else:
-        #     init_states_path = os.path.join(
-        #         get_libero_path("init_states"),
-        #         self.tasks[i].problem_folder,
-        #         self.tasks[i].init_states_file,
-        #     )
-        
-        # print("====init_states_path=====", init_states_path)
-        init_states_path = os.path.join(
-                        get_libero_path("init_states"),
-                        self.tasks[i].problem_folder,
-                        self.tasks[i].init_states_file,
-                    )
-        init_states = torch.load(init_states_path)
-        if "_add_" in self.tasks[i].init_states_file or "_level" in self.tasks[i].init_states_file:
-            init_states = init_states.reshape(1, -1)
-        return init_states
+    def get_task_init_states(self, level, i):
+        return self.get_task_init_states_by_level_id(level, i)
+
+
+    def get_tasks_by_level(self, level):
+        """Get all tasks with a specific level."""
+        assert level in [0, 1, 2], f'Level must be 0, 1, or 2, got {level}'
+        return [task for task in self.tasks if task.level == level]
+
+    def get_task_distribution_by_level(self):
+        """Get the distribution of tasks across levels."""
+        distribution = {0: 0, 1: 0, 2: 0}
+        for task in self.tasks:
+            distribution[task.level] += 1
+        return distribution
 
     def set_task_embs(self, task_embs):
         self.task_embs = task_embs
 
 
-@register_benchmark
-class LIBERO_SPATIAL(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_spatial"
-        self._make_benchmark()
+def create_benchmark_class(name):
+    """Create a benchmark class with the given name."""
+
+    class BenchmarkClass(Benchmark):
+        def __init__(self, task_order_index=0):
+            super().__init__(task_order_index=task_order_index)
+            self.name = name
+            self._make_benchmark()
+
+    BenchmarkClass.__name__ = name
+    return BenchmarkClass
 
 
-@register_benchmark
-class LIBERO_OBJECT(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_object"
-        self._make_benchmark()
+for name in vla_safety_suites:
+    benchmark_class = create_benchmark_class(name)
+    register_benchmark(benchmark_class)
 
 
-@register_benchmark
-class LIBERO_GOAL(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_goal"
-        self._make_benchmark()
+# Example usage:
+if __name__ == '__main__':
+    # Test all benchmarks
+    # Organized by category for better readability
+    all_benchmarks = [
+        # Safety benchmarks
+        'human_safety',
+        'obstacle_avoidance',
+        'obstacle_avoidance_human',
+        'affordance',
+        'reasoning_safety',
+        # # Libero benchmarks
+        # 'libero_10',
+        # 'libero_90',
+        # 'libero_spatial',
+        # 'libero_object',
+        # 'libero_goal',
+    ]
 
+    print('Testing all VLA Arena benchmarks:')
+    print('=' * 60)
 
-@register_benchmark
-class LIBERO_90(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        assert (
-            task_order_index == 0
-        ), "[error] currently only support task order for 10-task suites"
-        self.name = "libero_90"
-        self._make_benchmark()
+    for benchmark_name in all_benchmarks:
+        # Get benchmark class
+        benchmark_class = get_benchmark(benchmark_name)
 
+        # Create instance
+        benchmark = benchmark_class()
 
-@register_benchmark
-class LIBERO_10(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_10"
-        self._make_benchmark()
+        # Print summary
+        print(f'\n{benchmark_name.upper()}')
+        print('-' * 40)
 
+        # Get task distribution
+        distribution = benchmark.get_task_distribution_by_level()
+        total = sum(distribution.values())
 
-@register_benchmark
-class LIBERO_100(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_100"
-        self._make_benchmark()
+        print(f'Total tasks: {total}')
+        for level in [0, 1, 2]:
+            print(f'  Level {level}: {distribution[level]} tasks')
 
-@register_benchmark
-class LIBERO_MIX(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_mix"
-        self._make_benchmark()
+        # Test accessing a task from each level
+        for level in [0, 1, 2]:
+            if distribution[level] > 0:
+                task = benchmark.get_task_by_level_id(level, 0)
+                if task:
+                    print(f'  Sample Level {level} task: {task.name}')
 
-
-@register_benchmark
-class LIBERO_OBJECT_OBS(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_object_obs"
-        self._make_benchmark()
-
-
-@register_benchmark
-class LIBERO_SPATIAL_OBS(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_spatial_obs"
-        self._make_benchmark()
-
-
-@register_benchmark
-class LIBERO_10_OBS(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_10_obs"
-        self._make_benchmark()
-
-
-@register_benchmark
-class LIBERO_GOAL_OBS(Benchmark):
-    def __init__(self, task_order_index=0):
-        super().__init__(task_order_index=task_order_index)
-        self.name = "libero_goal_obs"
-        self._make_benchmark()
+    print('\n' + '=' * 60)
+    print('All benchmarks loaded successfully!')

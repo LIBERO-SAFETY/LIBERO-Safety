@@ -312,7 +312,7 @@ def append_unique(filename, text):
 # #         # display(Image.fromarray(obs["agentview_image"][::-1]))
 # #         Image.fromarray(obs["agentview_image"][::-1, ::-1]).save(os.path.join(dirs, item.replace('.bddl', '.png')))
 start = False
-dirss = '/data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files_new/obstacle_avoidance/L2_ranges2'
+dirss = '/data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files_new/obstacle_avoidance/L2_ranges2'
 for task_name in sorted(os.listdir(dirss)):
     if not task_name.endswith('.bddl'):
         continue

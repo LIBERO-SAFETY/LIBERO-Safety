@@ -1,6 +1,6 @@
 (define (problem LIBERO_Kitchen_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Hold the wooden bowl above the burning candle)
+  (:language hold the wooden bowl above the burning candle)
     (:regions
       (candle_region
           (:target kitchen_table)

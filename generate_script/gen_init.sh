@@ -1,3 +1,3 @@
-python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_spatial_obs
-python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_10_obs
-python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-plus/libero/libero/bddl_files/libero_goal_obs
+python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/libero_spatial_obs
+python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/libero_10_obs
+python generate_script/gen_init.py --bddl_path /data14/rongxu.cui.2510/benchmark/LIBERO-Safety/libero/libero/bddl_files/libero_goal_obs

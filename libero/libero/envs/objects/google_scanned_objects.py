@@ -120,6 +120,19 @@ class ClassicBlueMug(GoogleScannedObject):
             'z': (0, 0),
         }
 
+
+@register_object
+class RotatedClassicBlueMug(GoogleScannedObject):
+    def __init__(self, name='rotated_classic_blue_mug', obj_name='classic_blue_mug'):
+        super().__init__(name, obj_name)
+        self.rotation_axis = None
+        self.rotation = {
+            'x': (0, np.pi / 2),
+            'y': (0, 0),
+            'z': (0, 0),
+        }
+
+
 @register_object
 class ToyBalls(GoogleScannedObject):
     def __init__(self, name='toy_balls', obj_name='toy_balls'):
@@ -230,16 +243,33 @@ class PorcelainBowl(GoogleScannedObject):
 
 
 @register_object
-class ScanedHammer(GoogleScannedObject):
+class Hammer(GoogleScannedObject):
     def __init__(
         self,
-        name="scaned_hammer",
-        obj_name="scaned_hammer",
+        name="hammer",
+        obj_name="hammer",
         joints=[dict(type="free", damping="0.0005")],
     ):
         super().__init__(name, obj_name, joints=joints)
         self.rotation = (np.pi / 2, np.pi / 2)
         self.rotation_axis = 'z'
+
+
+@register_object
+class RotatedHammer(GoogleScannedObject):
+    def __init__(
+        self,
+        name="rotated_hammer",
+        obj_name="hammer",
+        joints=[dict(type="free", damping="0.0005")],
+    ):
+        super().__init__(name, obj_name, joints=joints)
+        self.rotation = {
+            "x": (0, np.pi / 2),
+            "z": (np.pi / 2, np.pi / 2),
+        }
+        # self.rotation = (0, np.pi / 2)
+        self.rotation_axis = None
 
 
 @register_object
@@ -307,6 +337,18 @@ class Chefmate8Frypan(GoogleScannedObject):
 class Frypan(GoogleScannedObject):
     def __init__(self, name="frypan", obj_name="frypan"):
         super().__init__(name, obj_name)
+
+
+@register_object
+class RotatedFrypan(GoogleScannedObject):
+    def __init__(self, name="rotated_frypan", obj_name="frypan"):
+        super().__init__(name, obj_name)
+        self.rotation_axis = None
+        self.rotation = {
+            'x': (0, np.pi / 2),
+            'y': (0, 0),
+            'z': (0, 0),
+        }
 
 
 @register_object

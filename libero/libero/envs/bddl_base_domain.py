@@ -88,7 +88,7 @@ class BDDLBaseDomain(SingleArmEnv):
 
         # whether to use ground-truth object states
         self.use_object_obs = use_object_obs
-
+        self.contact_force_threshold = 100.0
         # object placement initializer
         self.placement_initializer = placement_initializer
         self.conditional_placement_initializer = None
@@ -922,31 +922,26 @@ class BDDLBaseDomain(SingleArmEnv):
             f"Invalid motion type: {info['motion_type']}"
         )
     
-
     def _check_constraint(self, done):
-        cost_state = self.parsed_problem['cost_state']
-        cost = 0
-        for state in cost_state:
-            is_temporal = check_temporal_predicate(state[0])
-            if is_temporal or done:
-                predicate_cost = int(self._eval_predicate(state))
-                # Apply temporal cost shaping if it's a temporal predicate
-                if is_temporal:
-                    predicate_cost *= self.temporal_cost_shaping
-                    if self.mocap_joint_names and predicate_cost:
-                        if state[0] == 'incontact':
-                            target = state[2] + '_main_mocap'
-                            if target in self.mocap_joint_names:
-                                self.mocap_joint_names.remove(target)
-                                self.mocap_motion_generators.pop(state[2])
-                        elif state[0] == 'checkgrippercontact':
-                            target = state[1] + '_main_mocap'
-                            if target in self.mocap_joint_names:
-                                self.mocap_joint_names.remove(target)
-                                self.mocap_motion_generators.pop(state[1])
-                cost += predicate_cost
+        constraints = self.parsed_problem['constraints']
+        cost = {}
+        if not done:
+            for constraint in constraints:
+                predicate_cost = int(self._eval_predicate(constraint))
+                cost[constraint[0]] = predicate_cost
         return cost
     
+    def check_gripper_force(self, object_geoms):
+        left_g_geoms = [
+            self.robots[0].gripper._important_geoms['left_fingerpad']
+            
+        ]
+        right_g_geoms = [
+            self.robots[0].gripper._important_geoms['right_fingerpad']
+        ]
+        left_force = self.check_force(left_g_geoms, object_geoms)
+        right_force = self.check_force(right_g_geoms, object_geoms)
+        return max(left_force, right_force)
 
     def check_force(self, geoms_1, geoms_2=None):
         if type(geoms_1) is str:
@@ -975,9 +970,9 @@ class BDDLBaseDomain(SingleArmEnv):
                 else True
             )
             if (c1_in_g1 and c2_in_g2) or (c1_in_g2 and c2_in_g1):
-                print(
-                    f'contact: {self.sim.model.geom_id2name(contact.geom1)} {self.sim.model.geom_id2name(contact.geom2)}',
-                )
+                # print(
+                #     f'contact: {self.sim.model.geom_id2name(contact.geom1)} {self.sim.model.geom_id2name(contact.geom2)}',
+                # )
                 f6 = np.zeros(6)
                 mujoco.mj_contactForce(
                     self.sim.model._model, self.sim.data._data, i, f6
@@ -986,92 +981,6 @@ class BDDLBaseDomain(SingleArmEnv):
                 return normal_force
         return normal_force
 
-
-    def check_distance(self, geoms_1, geoms_2=None):
-        if type(geoms_1) is str:
-            geoms_1 = [geoms_1]
-        elif isinstance(geoms_1, MujocoModel):
-            geoms_1 = geoms_1.contact_geoms
-        if type(geoms_2) is str:
-            geoms_2 = [geoms_2]
-        elif isinstance(geoms_2, MujocoModel):
-            geoms_2 = geoms_2.contact_geoms
-
-        min_dist = float('inf')
-        # print(geoms_1)
-        # print(geoms_2)
-
-        # Iterate through all geometry pairs
-        for g1_name in geoms_1:
-            for g2_name in geoms_2:
-                # Avoid calculating distance between the same geometry and itself
-                if g1_name == g2_name:
-                    continue
-
-                try:
-                    g1_id = self.sim.model.geom_name2id(g1_name)
-                    g2_id = self.sim.model.geom_name2id(g2_name)
-                except ValueError:
-                    # If geometry not found, print warning and skip
-                    print(
-                        f"Warning: Unable to find geometry '{g1_name}' or '{g2_name}'"
-                    )
-                    continue
-
-                # Note: Added distmax parameter
-                # distmax is a distance upper bound used for optimization. We set a large value to get accurate distance.
-                fromto = np.zeros(6, dtype=np.float64)
-                dist = mujoco.mj_geomDistance(
-                    self.sim.model._model,
-                    self.sim.data._data,
-                    g1_id,
-                    g2_id,
-                    10.0,  # distmax
-                    fromto,
-                )
-
-                if dist < min_dist:
-                    min_dist = dist
-
-        return min_dist
-
-    def check_gripper_distance(self, object_geoms):
-        g_geoms = [
-            self.robots[0]
-            .gripper[self.robots[0].arms[0]]
-            ._important_geoms['left_fingerpad'],
-            self.robots[0]
-            .gripper[self.robots[0].arms[0]]
-            ._important_geoms['right_fingerpad'],
-        ]
-        gripper_geoms = ['gripper0_right_' + g[0] for g in g_geoms]
-        return self.check_distance(object_geoms, gripper_geoms)
-
-    def check_gripper_distance_part(self, object_1, geom_ids):
-        assert isinstance(
-            geom_ids, list
-        ), 'geom_ids must be a list of geom ids'
-        geom_1 = object_1.contact_geoms
-        g_geoms = [
-            self.robots[0]
-            .gripper[self.robots[0].arms[0]]
-            ._important_geoms['left_fingerpad'],
-            self.robots[0]
-            .gripper[self.robots[0].arms[0]]
-            ._important_geoms['right_fingerpad'],
-        ]
-        gripper_geoms = ['gripper0_right_' + g[0] for g in g_geoms]
-        geoms_to_check = []
-        for geom_name in geom_1:
-            if isinstance(geom_name, str):
-                geom_id = str(extract_trailing_int(geom_name))
-                if geom_id is not None and geom_id in geom_ids:
-                    geoms_to_check.append(geom_name)
-            else:
-                raise NotImplementedError(f'Invalid geom_id_1: {geom_name}')
-        dist = self.check_distance(geoms_to_check, gripper_geoms)
-        # print(dist)
-        return dist
 
     def _check_contact(self, sim, geoms_1, geoms_2=None):
         """
@@ -1111,8 +1020,50 @@ class BDDLBaseDomain(SingleArmEnv):
             c1_in_g2 = geom_2_name in geoms_1 
 
             if (c1_in_g1 and c2_in_g2) or (c1_in_g2 and c2_in_g1):
-                print(geom_2_name)
+                # print(geom_2_name)
                 return True
+        return False
+
+    def check_robot_contact(self, object_geoms):
+        """
+        Checks whether the specified gripper as defined by @gripper is grasping the specified object in the environment.
+        If multiple grippers are specified, will return True if at least one gripper is grasping the object.
+
+        By default, this will return True if at least one geom in both the "left_fingerpad" and "right_fingerpad" geom
+        groups are in contact with any geom specified by @object_geoms. Custom gripper geom groups can be
+        specified with @gripper as well.
+
+        Args:
+            gripper (GripperModel or str or list of str or list of list of str or dict): If a MujocoModel, this is specific
+                gripper to check for grasping (as defined by "left_fingerpad" and "right_fingerpad" geom groups). Otherwise,
+                this sets custom gripper geom groups which together define a grasp. This can be a string
+                (one group of single gripper geom), a list of string (multiple groups of single gripper geoms) or a
+                list of list of string (multiple groups of multiple gripper geoms), or a dictionary in the case
+                where the robot has multiple arms/grippers. At least one geom from each group must be in contact
+                with any geom in @object_geoms for this method to return True.
+            object_geoms (str or list of str or MujocoModel): If a MujocoModel is inputted, will check for any
+                collisions with the model's contact_geoms. Otherwise, this should be specific geom name(s) composing
+                the object to check for contact.
+
+        Returns:
+            bool: True if the gripper is grasping the given object
+        """
+        # Convert object, gripper geoms into standardized form
+        if isinstance(object_geoms, MujocoModel):
+            o_geoms = object_geoms.contact_geoms
+        else:
+            o_geoms = (
+                [object_geoms] if type(object_geoms) is str else object_geoms
+            )
+        g_group = []
+        for geom_i in range(self.sim.model.ngeom):
+            g_name = self.sim.model.geom_id2name(geom_i)
+            if g_name and "gripper" in g_name and self.sim.model.geom_group[geom_i] == 0:
+                g_group.append(geom_i)
+            if g_name and "robot" in g_name and self.sim.model.geom_group[geom_i] == 0:
+                g_group.append(geom_i)
+        if self._check_contact(self.sim, g_group, o_geoms):
+            return True
         return False
 
     def check_gripper_contact(self, object_geoms):
@@ -1146,15 +1097,24 @@ class BDDLBaseDomain(SingleArmEnv):
             o_geoms = (
                 [object_geoms] if type(object_geoms) is str else object_geoms
             )
-        g_geoms = [
-            self.robots[0].gripper._important_geoms['left_fingerpad'],
-            self.robots[0].gripper._important_geoms['right_fingerpad'],
+        left_g_geoms = [
+            self.robots[0].gripper._important_geoms['left_fingerpad']
+            
+        ]
+        right_g_geoms = [
+            self.robots[0].gripper._important_geoms['right_fingerpad']
         ]
         # Search for collisions between each gripper geom group and the object geoms group
-        for g_group in g_geoms:
+        left_contact = right_contact = False
+        for g_group in left_g_geoms:
             if self._check_contact(self.sim, g_group, o_geoms):
-                return True
-        return False
+                left_contact = True
+                break
+        for g_group in right_g_geoms:
+            if self._check_contact(self.sim, g_group, o_geoms):
+                right_contact = True
+                break
+        return left_contact and right_contact
 
 
     def check_gripper_contact_part(self, object_1, geom_ids_1):
@@ -1183,12 +1143,6 @@ class BDDLBaseDomain(SingleArmEnv):
                     self.object_states_dict[state[1]],
                     state[2],
                 )
-            if predicate_fn_name == 'checkgripperdistance':
-                object_1_name = state[1]
-                return float(state[2]) >= eval_predicate_fn(
-                    predicate_fn_name,
-                    self.object_states_dict[object_1_name],
-                )
             if predicate_fn_name == 'checkpartiallycontain':
                 object_1_name = state[1]
                 return eval_predicate_fn(
@@ -1214,6 +1168,15 @@ class BDDLBaseDomain(SingleArmEnv):
             # Checking unary logical predicates
             predicate_fn_name = state[0]
             object_name = state[1]
+            if predicate_fn_name == 'checkgripperforce':
+                force = eval_predicate_fn(
+                    predicate_fn_name,
+                    self.object_states_dict[state[1]],
+                )
+                if force > 0:
+                    print(f'force: {force}')
+                return force > self.contact_force_threshold
+            
             return eval_predicate_fn(
                 predicate_fn_name, self.object_states_dict[object_name]
             )
@@ -1222,18 +1185,6 @@ class BDDLBaseDomain(SingleArmEnv):
             predicate_fn_name = state[0]
             object_1_name = state[1]
             object_2_name = state[2]
-            if predicate_fn_name == 'checkdistance':
-                return float(state[3]) >= eval_predicate_fn(
-                    predicate_fn_name,
-                    self.object_states_dict[object_1_name],
-                    self.object_states_dict[object_2_name],
-                )
-            if predicate_fn_name == 'checkgripperdistancepart':
-                return float(state[3]) >= eval_predicate_fn(
-                    predicate_fn_name,
-                    self.object_states_dict[object_1_name],
-                    state[2],
-                )
             return float(state[3]) < eval_predicate_fn(
                 predicate_fn_name,
                 self.object_states_dict[object_1_name],
@@ -1305,8 +1256,8 @@ class BDDLBaseDomain(SingleArmEnv):
         self._set_mocap_motion()
         obs, reward, done, info = super().step(action)
         done = self._check_success()
-        # cost = self._check_cost(done)
-
+        cost = self._check_constraint(done)
+        info['cost'] = cost
         return obs, reward, done, info
 
     def _pre_action(self, action, policy_step=False):
