@@ -19,3 +19,18 @@ libero/libero/assets/
 eval_results/
 generate_script/
 scripts/custom_single.py
+
+# third_party/robosuite build/cache artifacts
+third_party/robosuite*/**/__pycache__/
+third_party/robosuite*/**/*.py[cod]
+third_party/robosuite*/**/*.so
+third_party/robosuite*/**/*.o
+third_party/robosuite*/**/*.a
+third_party/robosuite*/**/*.dylib
+third_party/robosuite*/**/*.dll
+third_party/robosuite*/build/
+third_party/robosuite*/dist/
+third_party/robosuite*/**/*.egg-info/
+third_party/robosuite*/.pytest_cache/
+third_party/robosuite*/.mypy_cache/
+third_party/robosuite*/.coverage
