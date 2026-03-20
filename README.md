@@ -10,7 +10,7 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 </p>
 
 <p align="center">
-  <img src="https://libero-safety.github.io/assets/images/teaser.png" alt="LIBERO-Safety teaser" width="88%">
+  <img src="assets/images/teaser.png" alt="LIBERO-Safety teaser" width="88%">
 </p>
 
 ## 🔥 Overview
