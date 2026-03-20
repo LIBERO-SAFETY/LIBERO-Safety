@@ -17,7 +17,7 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 ## 🔥 News & Updates
 
 - **2025-03-20**: Released [code](https://github.com/LIBERO-SAFETY/LIBERO-Safety), [assets](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets) and the [$\pi_{0.5}$](https://huggingface.co/LIBERO-Safety/pi05_libero_safety) fine-tuned weights.
-- **Coming soon**: We will open-source the RLDS and LeRobot **training dataset**.
+- **Coming soon**: We will open-source the **data generation pipeline** and the RLDS and LeRobot **training dataset**.
 
 ## 🔥 Overview
 
