@@ -5,8 +5,9 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 <p align="center">
   📄 <a href="https://huggingface.co/LIBERO-Safety"><strong>Paper</strong></a> &nbsp;|&nbsp;
   🌐 <a href="https://libero-safety.github.io"><strong>Website</strong></a> &nbsp;|&nbsp;
-  🤗 <a href="https://huggingface.co/LIBERO-Safety"><strong>Hugging Face</strong></a> &nbsp;|&nbsp;
-  📦 <a href="https://huggingface.co/LIBERO-Safety"><strong>Assets</strong></a>
+  🤗 <a href="https://huggingface.co/LIBERO-Safety"><strong>Datasets</strong></a> &nbsp;|&nbsp;
+  📦 <a href="https://huggingface.co/LIBERO-Safety"><strong>Assets</strong></a> &nbsp;|&nbsp;
+  🧠 <a href="https://huggingface.co/LIBERO-Safety"><strong>Model</strong></a>
 </p>
 
 <p align="center">
