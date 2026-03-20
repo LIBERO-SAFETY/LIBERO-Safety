@@ -23,6 +23,7 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 
 This repository provides the official **LIBERO-Safety** codebase built on top of [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO). It introduces a benchmark for **physical** and **semantic** safety in **Vision-Language-Action (VLA)** models, with tasks organized into **five suites** and **three difficulty levels (L0–L2)** per suite. A keypose-driven data generation pipeline is used to synthesize large-scale **collision-free** demonstrations for training and evaluation.
 
+
 Usage is **drop-in compatible** with the standard LIBERO workflow: replace your `LIBERO` checkout with this repository and install with `pip install -e .`—existing LIBERO-style scripts and configs largely work the same way.
 
 
