@@ -3,10 +3,10 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 </h1>
 
 <p align="center">
-  📄 <a href="https://arxiv.org/abs/XXXX.XXXXX"><strong>Paper</strong></a> &nbsp;|&nbsp;
+  📄 <a href="https://huggingface.co/LIBERO-Safety"><strong>Paper</strong></a> &nbsp;|&nbsp;
   🌐 <a href="https://libero-safety.github.io"><strong>Website</strong></a> &nbsp;|&nbsp;
   🤗 <a href="https://huggingface.co/LIBERO-Safety"><strong>Hugging Face</strong></a> &nbsp;|&nbsp;
-  💻 <a href="https://github.com/LIBERO-SAFETY/LIBERO-Safety"><strong>Code</strong></a>
+  📦 <a href="https://huggingface.co/LIBERO-Safety"><strong>Assets</strong></a>
 </p>
 
 <p align="center">
