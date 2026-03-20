@@ -6,7 +6,7 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
   📄 <a href="https://huggingface.co/LIBERO-Safety"><strong>Paper</strong></a> &nbsp;|&nbsp;
   🌐 <a href="https://libero-safety.github.io"><strong>Website</strong></a> &nbsp;|&nbsp;
   🤗 <a href="https://huggingface.co/LIBERO-Safety"><strong>Datasets</strong></a> &nbsp;|&nbsp;
-  📦 <a href="https://huggingface.co/LIBERO-Safety"><strong>Assets</strong></a> &nbsp;|&nbsp;
+  📦 <a href="https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets"><strong>Assets</strong></a> &nbsp;|&nbsp;
   🧠 <a href="https://huggingface.co/LIBERO-Safety"><strong>Model</strong></a>
 </p>
 
@@ -79,7 +79,7 @@ sudo apt-get update
 sudo apt-get install -y libexpat1 libfontconfig1-dev libpython3-stdlib libmagickwand-dev
 ```
 
-**Assets.** Please download our assets from the [LIBERO-Safety Hugging Face page](https://huggingface.co/LIBERO-Safety), including required objects, textures, and safety-benchmark resources. Please unzip the `assets.zip` file to `LIBERO-Safety/libero/libero/` so that assets are located under `libero/libero/assets/`. We provide both an [RLDS-format dataset]() and a [LeRobot-format dataset]() for training.
+**Assets.** Please download our assets from the [LIBERO-Safety](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets), including required objects, textures, and safety-benchmark resources. Please unzip the `assets.zip` file to `LIBERO-Safety/libero/libero/` so that assets are located under `libero/libero/assets/`. We provide both an [RLDS-format dataset]() and a [LeRobot-format dataset]() for training.
 
 ## 📈 Evaluation & leaderboard
 
