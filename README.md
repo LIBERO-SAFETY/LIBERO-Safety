@@ -5,9 +5,9 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 <p align="center">
   📄 <a href="https://github.com/LIBERO-SAFETY/LIBERO-Safety"><strong>Paper</strong></a> &nbsp;|&nbsp;
   🌐 <a href="https://libero-safety.github.io"><strong>Website</strong></a> &nbsp;|&nbsp;
-  🤗 <a href="https://huggingface.co/LIBERO-Safety"><strong>Datasets</strong></a> &nbsp;|&nbsp;
-  📦 <a href="https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets"><strong>Assets</strong></a> &nbsp;|&nbsp;
-  🧠 <a href="https://huggingface.co/LIBERO-Safety/pi05_libero_safety"><strong>Model</strong></a>
+  🤗 <a href="https://huggingface.co/datasets/LIBERO-Safety/libero_safety"><strong>Datasets</strong></a> &nbsp;|&nbsp;
+  📦 <a href="https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets/tree/main"><strong>Assets</strong></a> &nbsp;|&nbsp;
+  🧠 <a href="https://huggingface.co/LIBERO-Safety/pi05_libero_safety/tree/main"><strong>Model</strong></a>
 </p>
 
 <p align="center">
@@ -16,8 +16,8 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 
 ## 🔥 News & Updates
 
-- **2026-03-20**: Released [code](https://github.com/LIBERO-SAFETY/LIBERO-Safety), [assets](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets) and the [pi₀.₅](https://huggingface.co/LIBERO-Safety/pi05_libero_safety) fine-tuned weights.
-- **2026-04-23**: Open-sourced [LeRobot **training dataset**](https://huggingface.co/LIBERO-Safety).
+- **2026-03-20**: Released [code](https://github.com/LIBERO-SAFETY/LIBERO-Safety), [assets](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets/tree/main) and the [pi₀.₅](https://huggingface.co/LIBERO-Safety/pi05_libero_safety/tree/main) fine-tuned weights.
+- **2026-04-23**: Open-sourced [LeRobot **training dataset**](https://huggingface.co/datasets/LIBERO-Safety/libero_safety).
 - **Coming soon**: We will open-source the **data generation pipeline**.
 
 ## 🔥 Overview
