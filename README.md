@@ -93,6 +93,19 @@ sudo apt-get install -y libexpat1 libfontconfig1-dev libpython3-stdlib libmagick
 - **Project page:** metrics, figures, and qualitative failure cases are summarized on the [**website**](https://libero-safety.github.io).
 - **Paper:** full protocol and numbers will appear in the camera-ready / arXiv version (update the Paper link at the top when available).
 
+## 📜 Citation
+
+If you find LIBERO-Safety useful in your research, please cite our paper:
+
+```bibtex
+@article{,
+  title={LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models},
+  author={},
+  journal={},
+  year={}
+}
+```
+
 
 ## Acknowledgments
 
