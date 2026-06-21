@@ -86,7 +86,7 @@ sudo apt-get update
 sudo apt-get install -y libexpat1 libfontconfig1-dev libpython3-stdlib libmagickwand-dev
 ```
 
-**Assets.** Please download our assets from the [LIBERO-Safety](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets), including required objects, textures, and safety-benchmark resources. Please unzip the `assets.zip` file to `LIBERO-Safety/libero/libero/` so that assets are located under `libero/libero/assets/`. We provide both an [RLDS-format dataset]() and a [LeRobot-format dataset]() for training.
+**Assets.** Please download our assets from the [LIBERO-Safety](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets/tree/main), including required objects, textures, and safety-benchmark resources. Please unzip the `assets.zip` file to `LIBERO-Safety/libero/libero/` so that assets are located under `libero/libero/assets/`. We provide [LeRobot-format dataset](https://huggingface.co/datasets/LIBERO-Safety/libero_safety) for training.
 
 ## 📈 Evaluation & leaderboard
 
