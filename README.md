@@ -58,7 +58,7 @@ To benchmark safety across **physical execution** and **cognitive reasoning**, w
 
 1. **Standard VLA models** — [OpenVLA](https://github.com/openvla/openvla), [OpenVLA-OFT](https://github.com/moojink/openvla-oft), π₀, and π0.5 ([OpenPI](https://github.com/Physical-Intelligence/openpi)).
 2. **World model (WM)–based VLAs** — [UniVLA](https://github.com/OpenDriveLab/UniVLA) and [VLA-JEPA](https://github.com/ginwind/VLA-JEPA).
-3. **Dual-system VLA frameworks** — GR00T-1.5 and GR00T-1.6 ([GR00T](https://github.com/NVIDIA/Isaac-GR00T)).
+3. **Dual-system VLA frameworks** — GR00T N1.5 and GR00T N1.6 ([GR00T](https://github.com/NVIDIA/Isaac-GR00T)).
 4. **Embodied foundation models** — [RynnBrain](https://github.com/alibaba-damo-academy/RynnBrain) and [RoboBrain](https://github.com/FlagOpen/RoboBrain), used **only** for **Semantic safety reasoning** suite.
 
 
