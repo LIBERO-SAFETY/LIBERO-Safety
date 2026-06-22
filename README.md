@@ -2,6 +2,10 @@
 LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models
 </h1>
 
+<h3 align="center">
+ECCV 2026
+</h3>
+
 <p align="center">
   📄 <a href="https://github.com/LIBERO-SAFETY/LIBERO-Safety"><strong>Paper</strong></a> &nbsp;|&nbsp;
   🌐 <a href="https://libero-safety.github.io"><strong>Website</strong></a> &nbsp;|&nbsp;
@@ -13,6 +17,7 @@ LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vis
 <p align="center">
   <img src="assets/images/teaser.png" alt="LIBERO-Safety teaser" width="88%">
 </p>
+
 
 ## 🔥 News & Updates
 
