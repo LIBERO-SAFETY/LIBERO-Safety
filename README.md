@@ -15,14 +15,19 @@ ECCV 2026
 </p>
 
 <p align="center">
+  🎉 <strong>Accepted to ECCV 2026</strong>
+</p>
+
+<p align="center">
   <img src="assets/images/teaser.png" alt="LIBERO-Safety teaser" width="88%">
 </p>
 
 
 ## 🔥 News & Updates
 
-- **2026-03-20**: Released [code](https://github.com/LIBERO-SAFETY/LIBERO-Safety), [assets](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets/tree/main) and the [pi₀.₅](https://huggingface.co/LIBERO-Safety/pi05_libero_safety/tree/main) fine-tuned weights.
+- **2026-06-18**: LIBERO-Safety was accepted to **ECCV 2026**.
 - **2026-04-23**: Open-sourced [LeRobot **training dataset**](https://huggingface.co/datasets/LIBERO-Safety/libero_safety).
+- **2026-03-20**: Released [code](https://github.com/LIBERO-SAFETY/LIBERO-Safety), [assets](https://huggingface.co/datasets/LIBERO-Safety/libero_safety_assets/tree/main) and the [pi₀.₅](https://huggingface.co/LIBERO-Safety/pi05_libero_safety/tree/main) fine-tuned weights.
 - **Coming soon**: We will open-source the **data generation pipeline**.
 
 ## 🔥 Overview
