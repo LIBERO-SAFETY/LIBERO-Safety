@@ -104,7 +104,7 @@ sudo apt-get install -y libexpat1 libfontconfig1-dev libpython3-stdlib libmagick
 If you find LIBERO-Safety useful in your research, please cite our paper:
 
 ```bibtex
-@article{
+@article{cui2026liberosafety,
   title={LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models},
   author={Rongxu Cui and Zongzheng Zhang and Jingrui Pang and Haohan Chi and Jinbang Guo and Saining Zhang and Shaoxuan Xie and Xin Jin and Yao Mu and Jiaolong Yang and Guocai Yao and Xianyuan Zhan and Ya-Qin Zhang and Hao Zhao},
   journal={arXiv preprint arXiv:2606.23686},
